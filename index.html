@@ -931,6 +931,16 @@
             border-radius: var(--radius-md);
             overflow: hidden;
             background: var(--bg-primary);
+            transition: all 0.2s ease;
+        }
+
+        .accordion-item:hover {
+            border-color: var(--primary-light);
+        }
+
+        .accordion-item.open {
+            border-color: var(--primary);
+            box-shadow: 0 2px 8px rgba(34, 197, 94, 0.1);
         }
 
         .accordion-header {
@@ -948,16 +958,22 @@
             background: var(--bg-accent);
         }
 
+        .accordion-item.open .accordion-header {
+            background: var(--bg-accent);
+            border-bottom: 1px solid var(--primary-light);
+        }
+
         .accordion-title {
             font-size: 0.938rem;
             font-weight: 600;
             color: var(--text-primary);
             flex: 1;
+            line-height: 1.4;
         }
 
         .accordion-icon {
-            width: 24px;
-            height: 24px;
+            width: 20px;
+            height: 20px;
             color: var(--text-muted);
             transition: transform 0.3s ease;
             flex-shrink: 0;
@@ -965,6 +981,7 @@
 
         .accordion-item.open .accordion-icon {
             transform: rotate(180deg);
+            color: var(--primary);
         }
 
         .accordion-content {
@@ -974,20 +991,25 @@
         }
 
         .accordion-item.open .accordion-content {
-            max-height: 2000px;
+            max-height: 3000px;
         }
 
         .accordion-body {
             padding: 1.25rem;
             font-size: 0.938rem;
             color: var(--text-secondary);
-            line-height: 1.7;
+            line-height: 1.8;
             white-space: pre-line;
             border-top: 1px solid var(--border-light);
         }
 
         .accordion-body strong {
             color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .accordion-body em {
+            color: var(--text-muted);
         }
 
         /* ===== DOWNLOAD TEMPLATE BUTTON ===== */
@@ -1335,28 +1357,42 @@
 
         /* ===== PLANNING LEVELS DIAGRAM ===== */
         .diagram-section {
-            margin: 1.5rem 0;
-            padding: 1.5rem;
-            background: linear-gradient(135deg, var(--bg-accent) 0%, var(--bg-primary) 100%);
+            margin: 2rem 0;
+            padding: 2rem;
+            background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-accent) 100%);
             border-radius: var(--radius-lg);
-            border: 1px solid var(--primary-light);
+            border: 2px solid var(--primary-light);
+            box-shadow: 0 4px 20px rgba(34, 197, 94, 0.1);
         }
 
         .diagram-title {
             font-size: 0.875rem;
             font-weight: 700;
-            color: var(--text-primary);
+            color: var(--primary-dark);
             text-align: center;
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
             text-transform: uppercase;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.1em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .diagram-title::before,
+        .diagram-title::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--primary-light), transparent);
+            max-width: 80px;
         }
 
         .pyramid-diagram {
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.75rem;
             max-width: 500px;
             margin: 0 auto;
         }
@@ -1365,73 +1401,79 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 1rem 1.5rem;
+            padding: 1.25rem 1.5rem;
             border-radius: var(--radius-md);
             text-align: center;
             position: relative;
             transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
 
         .pyramid-level:hover {
             transform: scale(1.02);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
         }
 
         .pyramid-level.strategy {
-            width: 60%;
-            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+            width: 55%;
+            background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
             color: white;
         }
 
         .pyramid-level.tactics {
-            width: 80%;
-            background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+            width: 75%;
+            background: linear-gradient(135deg, #f97316 0%, #c2410c 100%);
             color: white;
         }
 
         .pyramid-level.operations {
             width: 100%;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            background: linear-gradient(135deg, var(--primary) 0%, #15803d 100%);
             color: white;
-            box-shadow: 0 4px 15px rgba(34, 197, 94, 0.3);
+            box-shadow: 0 4px 20px rgba(34, 197, 94, 0.4);
         }
 
         .pyramid-level-content {
             display: flex;
             flex-direction: column;
-            gap: 0.25rem;
+            gap: 0.375rem;
         }
 
         .pyramid-level-title {
-            font-size: 1rem;
-            font-weight: 700;
+            font-size: 1.125rem;
+            font-weight: 800;
+            letter-spacing: 0.05em;
         }
 
         .pyramid-level-subtitle {
-            font-size: 0.75rem;
+            font-size: 0.813rem;
             opacity: 0.9;
+            font-weight: 500;
         }
 
         .pyramid-arrow {
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--text-muted);
-            font-size: 1.5rem;
+            color: var(--primary);
+            font-size: 1.25rem;
+            font-weight: bold;
         }
 
         .diagram-note {
-            margin-top: 1rem;
-            padding: 1rem;
+            margin-top: 1.5rem;
+            padding: 1rem 1.25rem;
             background: var(--bg-primary);
             border-radius: var(--radius-md);
-            border-left: 3px solid var(--primary);
+            border-left: 4px solid var(--primary);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
         }
 
         .diagram-note p {
             font-size: 0.875rem;
             color: var(--text-secondary);
             margin: 0;
-            line-height: 1.5;
+            line-height: 1.6;
         }
 
         .diagram-note strong {
@@ -1442,49 +1484,68 @@
             display: inline-flex;
             align-items: center;
             gap: 0.375rem;
-            padding: 0.25rem 0.75rem;
-            background: rgba(255,255,255,0.2);
+            padding: 0.375rem 0.875rem;
+            background: rgba(255,255,255,0.25);
             border-radius: 20px;
-            font-size: 0.688rem;
-            font-weight: 600;
+            font-size: 0.75rem;
+            font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.05em;
-            margin-top: 0.5rem;
+            margin-top: 0.625rem;
+            backdrop-filter: blur(4px);
         }
 
         /* ===== QUESTIONS SECTION ===== */
         .questions-section {
             margin-top: 2rem;
-            padding-top: 1.5rem;
-            border-top: 2px solid var(--border);
+            padding: 1.5rem;
+            background: linear-gradient(135deg, var(--bg-accent) 0%, var(--bg-primary) 100%);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--primary-light);
         }
 
         .questions-title {
             font-size: 1rem;
             font-weight: 700;
-            color: var(--text-primary);
-            margin-bottom: 1rem;
+            color: var(--primary-dark);
+            margin-bottom: 1.25rem;
             display: flex;
             align-items: center;
             gap: 0.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--primary-light);
+        }
+
+        .questions-title svg {
+            color: var(--primary);
         }
 
         .question-item {
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.25rem;
+            padding: 1rem;
+            background: var(--bg-primary);
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border);
+        }
+
+        .question-item:last-child {
+            margin-bottom: 0;
         }
 
         .question-label {
             font-size: 0.938rem;
             font-weight: 600;
             color: var(--text-primary);
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.75rem;
             display: flex;
             gap: 0.5rem;
+            line-height: 1.5;
         }
 
         .question-number {
             color: var(--primary);
             font-weight: 700;
+            flex-shrink: 0;
         }
 
         .question-textarea {
@@ -1498,12 +1559,17 @@
             line-height: 1.5;
             resize: vertical;
             transition: all 0.2s ease;
+            background: var(--bg-primary);
         }
 
         .question-textarea:focus {
             outline: none;
             border-color: var(--primary);
             box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.1);
+        }
+
+        .question-textarea::placeholder {
+            color: var(--text-muted);
         }
 
         /* ===== FLOATING SUPPORT BUTTON ===== */
@@ -2322,7 +2388,7 @@
                     title: "Що таке форма плану і навіщо вона потрібна",
                     content: `<strong>Форма плану на тиждень — це стандартний бланк</strong>, який заповнює кожен співробітник щотижня.
 
-<strong>⚠️ ВАЖЛИВА ПРИМІТКА:</strong>
+<strong>ВАЖЛИВА ПРИМІТКА:</strong>
 У цьому уроці ми говоримо саме про СТАНДАРТ — як має виглядати план, які поля він містить, що в них писати. 
 
 Не має значення, яку програму ви оберете:
@@ -2357,7 +2423,7 @@
                     title: "Шапка плану: хто, коли, що",
                     content: `У верхній частині форми є кілька обов'язкових полів. Розберемо кожне:
 
-<strong>📌 ПОСАДА</strong>
+<strong>ПОСАДА</strong>
 
 Тут пишемо посаду (або посади), які обіймає співробітник.
 
@@ -2369,13 +2435,13 @@
 
 Назву посади можна скорочувати, якщо в компанії є прийнята система скорочень.
 
-<strong>📌 ДАТА</strong>
+<strong>ДАТА</strong>
 
 Дата початку тижня, на який складено план.
 
 Наприклад: "13.01.2025" — означає, що це план на тиждень з 13 по 19 січня.
 
-<strong>📌 ПІБ</strong>
+<strong>ПІБ</strong>
 
 Прізвище, ім'я (і по батькові, якщо прийнято в компанії) того, хто склав план.
 
@@ -2395,19 +2461,19 @@
 
 <strong>У формі для кожної статистики вказуємо:</strong>
 
-📌 <strong>ОД. ВИМ. (одиниця виміру)</strong>
+<strong>ОД. ВИМ. (одиниця виміру)</strong>
 Як саме вимірюється ця статистика:
 • грн, $, € — для грошей
 • шт. — для кількості
 • бали — для оцінок
 • % — для відсотків
 
-📌 <strong>КІЛЬКІСТЬ</strong>
+<strong>КІЛЬКІСТЬ</strong>
 Скільки було МИНУЛОГО тижня. Це факт — те, що вже відбулося.
 
 Наприклад: минулого тижня продали на 50 000 грн.
 
-📌 <strong>КВОТА</strong>
+<strong>КВОТА</strong>
 Скільки ПЛАНУЄТЬСЯ на наступний тиждень. Це план — те, чого хочемо досягти.
 
 Наприклад: наступного тижня планується продати на 60 000 грн.
@@ -2420,25 +2486,25 @@
                     title: "Як заповнювати список завдань",
                     content: `Основна частина плану — це таблиця із завданнями. Кожен рядок — одне завдання.
 
-<strong>📌 № (номер)</strong>
+<strong>№ (номер)</strong>
 Просто порядковий номер завдання: 1, 2, 3...
 
 Навіщо? Щоб легко посилатися: "Завдання №5 потребує узгодження".
 
-<strong>📌 НАЗВА (завдання)</strong>
+<strong>НАЗВА (завдання)</strong>
 Що саме потрібно зробити. Формулювання дії.
 
-❌ ПОГАНО: "Клієнти"
-✅ ДОБРЕ: "Зателефонувати 20 клієнтам з бази для повторного продажу"
+<span style="color:#dc2626">✗</span> ПОГАНО: "Клієнти"
+<span style="color:#16a34a">✓</span> ДОБРЕ: "Зателефонувати 20 клієнтам з бази для повторного продажу"
 
-❌ ПОГАНО: "Маркетинг"
-✅ ДОБРЕ: "Підготувати 3 пости для Facebook на наступний тиждень"
+<span style="color:#dc2626">✗</span> ПОГАНО: "Маркетинг"
+<span style="color:#16a34a">✓</span> ДОБРЕ: "Підготувати 3 пости для Facebook на наступний тиждень"
 
 <strong>Правило: завдання має бути конкретним і зрозумілим.</strong>
 
 Якщо прочитавши завдання незрозуміло, ЩО саме робити — це погане формулювання.
 
-<strong>📌 ПРОДУКТ</strong>
+<strong>ПРОДУКТ</strong>
 Що з'явиться ПІСЛЯ виконання завдання. Який результат?
 
 Завдання: "Зателефонувати 20 клієнтам"
@@ -2453,7 +2519,7 @@
                 },
                 {
                     title: "Планування часу: найважливіший елемент",
-                    content: `<strong>📌 ЧАС ПЛАН</strong>
+                    content: `<strong>ЧАС ПЛАН</strong>
 Скільки годин (або хвилин) ви плануєте витратити на це завдання.
 
 Це ПРОГНОЗ. Ваша оцінка: "Я думаю, що це займе 2 години".
@@ -2467,7 +2533,7 @@
 <strong>Правило TALKO System:</strong>
 Сума всіх "Час план" не може перевищувати реальний робочий час тижня.
 
-<strong>📌 ЧАС ФАКТ</strong>
+<strong>ЧАС ФАКТ</strong>
 Скільки годин реально витратили на завдання.
 
 Це заповнюється ПІСЛЯ виконання, у звіті.
@@ -2476,7 +2542,7 @@
 
 Якщо ви планували 2 години, а витратили 5 — це важлива інформація. Наступного разу будете планувати реалістичніше.
 
-<strong>📌 ДАТА ВИКОНАННЯ</strong>
+<strong>ДАТА ВИКОНАННЯ</strong>
 Коли завдання було фактично завершене.
 
 Заповнюється тільки у звіті, і тільки якщо завдання ПОВНІСТЮ виконане.`
@@ -2509,7 +2575,7 @@
                 },
                 {
                     title: "Поле СХВАЛЕНО: чому це обов'язково",
-                    content: `<strong>📌 СХВАЛЕНО</strong>
+                    content: `<strong>СХВАЛЕНО</strong>
 Підпис керівника, який затвердив цей план.
 
 <strong>Навіщо потрібне схвалення?</strong>
@@ -2643,32 +2709,32 @@
                 },
                 {
                     title: "Типові помилки у формулюванні завдань",
-                    content: `<strong>❌ ПОМИЛКА 1: Завдання без конкретики</strong>
+                    content: `<strong>ПОМИЛКА 1: Завдання без конкретики</strong>
 
-Погано: "Працювати з клієнтами"
-Добре: "Зателефонувати 15 клієнтам з бази для збору зворотного зв'язку"
+<span style="color:#dc2626">✗</span> Погано: "Працювати з клієнтами"
+<span style="color:#16a34a">✓</span> Добре: "Зателефонувати 15 клієнтам з бази для збору зворотного зв'язку"
 
-<strong>❌ ПОМИЛКА 2: Процес замість результату</strong>
+<strong>ПОМИЛКА 2: Процес замість результату</strong>
 
-Погано: "Займатися маркетингом"
-Добре: "Створити 5 рекламних оголошень для Facebook"
+<span style="color:#dc2626">✗</span> Погано: "Займатися маркетингом"
+<span style="color:#16a34a">✓</span> Добре: "Створити 5 рекламних оголошень для Facebook"
 
-<strong>❌ ПОМИЛКА 3: "Проконтролювати" без конкретики</strong>
+<strong>ПОМИЛКА 3: "Проконтролювати" без конкретики</strong>
 
-Погано: "Проконтролювати виконання"
-Добре: "Зателефонувати підряднику, отримати звіт про статус робіт"
+<span style="color:#dc2626">✗</span> Погано: "Проконтролювати виконання"
+<span style="color:#16a34a">✓</span> Добре: "Зателефонувати підряднику, отримати звіт про статус робіт"
 
 Чому "проконтролювати" — погано?
 • Як саме контролювати? Зателефонувати? Написати? Зустрітися?
 • Скільки це займе часу?
 • Який результат контролю?
 
-<strong>❌ ПОМИЛКА 4: "Організувати" без деталей</strong>
+<strong>ПОМИЛКА 4: "Організувати" без деталей</strong>
 
-Погано: "Організувати зустріч"
-Добре: "Узгодити час з учасниками, забронювати переговорну, підготувати порядок денний"
+<span style="color:#dc2626">✗</span> Погано: "Організувати зустріч"
+<span style="color:#16a34a">✓</span> Добре: "Узгодити час з учасниками, забронювати переговорну, підготувати порядок денний"
 
-<strong>❌ ПОМИЛКА 5: Завдання без продукту</strong>
+<strong>ПОМИЛКА 5: Завдання без продукту</strong>
 
 Якщо не можете написати, який ПРОДУКТ отримаєте — завдання сформульоване погано.
 
@@ -2714,13 +2780,13 @@
 
 Ви можете вести план у будь-якій програмі. Але ми рекомендуємо Google Таблиці, тому що:
 
-✅ Легко копіювати шаблон щотижня
-✅ Можна ділитися з керівником для схвалення
-✅ Автоматичний підрахунок суми годин
-✅ Історія всіх планів зберігається
-✅ Можна працювати з телефону
-✅ Пошук по старих планах
-✅ Безкоштовно
+<span style="color:#16a34a">✓</span> Легко копіювати шаблон щотижня
+<span style="color:#16a34a">✓</span> Можна ділитися з керівником для схвалення
+<span style="color:#16a34a">✓</span> Автоматичний підрахунок суми годин
+<span style="color:#16a34a">✓</span> Історія всіх планів зберігається
+<span style="color:#16a34a">✓</span> Можна працювати з телефону
+<span style="color:#16a34a">✓</span> Пошук по старих планах
+<span style="color:#16a34a">✓</span> Безкоштовно
 
 <strong>Як організувати:</strong>
 
