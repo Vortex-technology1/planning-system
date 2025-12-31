@@ -1085,6 +1085,254 @@
             color: var(--text-muted);
         }
 
+        /* ===== EMBEDDED TEMPLATE TABLE ===== */
+        .template-section {
+            margin: 2rem 0;
+            background: var(--bg-primary);
+            border-radius: var(--radius-lg);
+            border: 2px solid var(--primary);
+            overflow: hidden;
+        }
+
+        .template-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 1.25rem;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+        }
+
+        .template-header-left {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .template-header-icon {
+            width: 28px;
+            height: 28px;
+            opacity: 0.9;
+        }
+
+        .template-header-title {
+            font-size: 1rem;
+            font-weight: 700;
+        }
+
+        .template-header-badge {
+            display: flex;
+            align-items: center;
+            gap: 0.375rem;
+            padding: 0.375rem 0.75rem;
+            background: rgba(255,255,255,0.2);
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .template-body {
+            padding: 1.25rem;
+            overflow-x: auto;
+        }
+
+        .template-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.875rem;
+            min-width: 600px;
+        }
+
+        .template-table th,
+        .template-table td {
+            padding: 0.625rem 0.75rem;
+            border: 1px solid var(--border);
+            text-align: left;
+            vertical-align: top;
+        }
+
+        .template-table th {
+            background: var(--bg-secondary);
+            font-weight: 600;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            color: var(--text-secondary);
+        }
+
+        .template-table td {
+            background: var(--bg-primary);
+        }
+
+        .template-table .section-row {
+            background: var(--bg-accent) !important;
+        }
+
+        .template-table .section-row td {
+            background: var(--bg-accent);
+            font-weight: 700;
+            color: var(--primary-dark);
+            padding: 0.75rem;
+        }
+
+        .template-table .section-icon {
+            width: 16px;
+            height: 16px;
+            vertical-align: middle;
+            margin-right: 0.5rem;
+        }
+
+        .template-table .example-text {
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+
+        .template-table .hint-text {
+            color: var(--text-muted);
+            font-size: 0.75rem;
+            margin-top: 0.25rem;
+        }
+
+        .template-table .input-cell {
+            background: #fefce8 !important;
+            border: 1px dashed #eab308 !important;
+        }
+
+        .template-table .quota-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            padding: 0.125rem 0.5rem;
+            background: #dbeafe;
+            color: #2563eb;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .template-table .coord-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            padding: 0.125rem 0.5rem;
+            background: #fee2e2;
+            color: #dc2626;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .template-info-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .template-info-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .template-info-label {
+            font-weight: 600;
+            color: var(--text-secondary);
+            font-size: 0.813rem;
+            white-space: nowrap;
+        }
+
+        .template-info-value {
+            flex: 1;
+            padding: 0.5rem 0.75rem;
+            background: #fefce8;
+            border: 1px dashed #eab308;
+            border-radius: var(--radius-sm);
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+
+        .template-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 1.25rem;
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .template-legend {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            font-size: 0.75rem;
+        }
+
+        .template-legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.375rem;
+            color: var(--text-muted);
+        }
+
+        .template-legend-color {
+            width: 12px;
+            height: 12px;
+            border-radius: 2px;
+        }
+
+        .template-legend-color.blue { background: #dbeafe; border: 1px solid #2563eb; }
+        .template-legend-color.red { background: #fee2e2; border: 1px solid #dc2626; }
+        .template-legend-color.yellow { background: #fefce8; border: 1px solid #eab308; }
+
+        .template-download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.625rem 1rem;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: var(--radius-sm);
+            font-size: 0.813rem;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .template-download-btn:hover {
+            background: var(--primary-dark);
+        }
+
+        .template-download-btn svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        @media (max-width: 640px) {
+            .template-info-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .template-footer {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .template-legend {
+                justify-content: center;
+            }
+            
+            .template-download-btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
         /* ===== PLANNING LEVELS DIAGRAM ===== */
         .diagram-section {
             margin: 1.5rem 0;
@@ -2488,19 +2736,8 @@
 Завантажте обидва, вивчіть приклад, потім працюйте з чистим.`
                 }
             ],
-            hasDownload: true,
-            downloadLinks: [
-                {
-                    name: "📋 Заповнений приклад з підказками",
-                    url: "TEMPLATE_FILLED_URL",
-                    description: "Вивчіть спочатку цей — наведіть курсор на клітинки для підказок"
-                },
-                {
-                    name: "📥 Чистий шаблон для роботи",
-                    url: "TEMPLATE_CLEAN_URL",
-                    description: "Зробіть копію і використовуйте щотижня"
-                }
-            ],
+            hasTemplate: true,
+            templateDownloadUrl: "TEMPLATE_URL",
             questions: [
                 {
                     id: 1,
@@ -2791,7 +3028,6 @@
             let downloadHTML = '';
             if (module.hasDownload) {
                 if (module.downloadLinks && module.downloadLinks.length > 0) {
-                    // Multiple download links
                     let buttonsHTML = module.downloadLinks.map((link, index) => `
                         <a href="${link.url}" target="_blank" class="download-btn ${index > 0 ? 'secondary' : ''}">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -2808,34 +3044,254 @@
                     
                     downloadHTML = `
                         <div class="download-section">
-                            <div class="download-title">📥 Завантажте шаблони плану на тиждень</div>
-                            <div class="download-desc">Зробіть копію у свій Google Drive і використовуйте для планування</div>
-                            <div class="download-buttons">
-                                ${buttonsHTML}
-                            </div>
-                            <div class="download-note">Натисніть "Файл" → "Зробити копію" щоб зберегти у свій Drive</div>
+                            <div class="download-title">Завантажте шаблони</div>
+                            <div class="download-buttons">${buttonsHTML}</div>
                         </div>
                     `;
                 } else if (module.downloadUrl) {
-                    // Single download link (backward compatibility)
                     downloadHTML = `
                         <div class="download-section">
-                            <div class="download-title">📥 Завантажте шаблон плану на тиждень</div>
-                            <div class="download-desc">Зробіть копію у свій Google Drive і використовуйте для планування</div>
+                            <div class="download-title">Завантажте шаблон</div>
                             <div class="download-buttons">
                                 <a href="${module.downloadUrl}" target="_blank" class="download-btn">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                                        <polyline points="7 10 12 15 17 10"/>
-                                        <line x1="12" y1="15" x2="12" y2="3"/>
-                                    </svg>
-                                    Відкрити шаблон в Google Таблицях
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                                    Відкрити в Google Таблицях
                                 </a>
                             </div>
-                            <div class="download-note">Натисніть "Файл" → "Зробити копію" щоб зберегти у свій Drive</div>
                         </div>
                     `;
                 }
+            }
+            
+            // Template section (embedded table)
+            let templateHTML = '';
+            if (module.hasTemplate) {
+                templateHTML = `
+                    <div class="template-section">
+                        <div class="template-header">
+                            <div class="template-header-left">
+                                <svg class="template-header-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="3" width="18" height="18" rx="2"/>
+                                    <line x1="3" y1="9" x2="21" y2="9"/>
+                                    <line x1="9" y1="21" x2="9" y2="9"/>
+                                </svg>
+                                <span class="template-header-title">БЛАНК ПЛАНУ НА ТИЖДЕНЬ</span>
+                            </div>
+                            <div class="template-header-badge">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                    <polyline points="14 2 14 8 20 8"/>
+                                </svg>
+                                Стандарт TALKO
+                            </div>
+                        </div>
+                        
+                        <div class="template-body">
+                            <!-- Шапка -->
+                            <div class="template-info-row">
+                                <div class="template-info-item">
+                                    <span class="template-info-label">Посада:</span>
+                                    <span class="template-info-value">Керівник відділу продажів</span>
+                                </div>
+                                <div class="template-info-item">
+                                    <span class="template-info-label">Дата:</span>
+                                    <span class="template-info-value">13.01.2025</span>
+                                </div>
+                            </div>
+                            <div class="template-info-row">
+                                <div class="template-info-item" style="grid-column: 1 / -1;">
+                                    <span class="template-info-label">ПІБ:</span>
+                                    <span class="template-info-value">Петренко Олександр Іванович</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Статистики -->
+                            <table class="template-table">
+                                <tr class="section-row">
+                                    <td colspan="5">
+                                        <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <line x1="18" y1="20" x2="18" y2="10"/>
+                                            <line x1="12" y1="20" x2="12" y2="4"/>
+                                            <line x1="6" y1="20" x2="6" y2="14"/>
+                                        </svg>
+                                        СТАТИСТИКИ
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th style="width:5%">№</th>
+                                    <th style="width:35%">Назва статистики</th>
+                                    <th style="width:15%">Од. вимір.</th>
+                                    <th style="width:20%">Факт (мин. тижд.)</th>
+                                    <th style="width:25%">Квота (план)</th>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td class="input-cell"><span class="example-text">Сума продажів</span></td>
+                                    <td class="input-cell"><span class="example-text">грн</span></td>
+                                    <td class="input-cell"><span class="example-text">85 000</span></td>
+                                    <td class="input-cell"><strong style="color: var(--primary-dark)">100 000</strong></td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td class="input-cell"><span class="example-text">Кількість нових клієнтів</span></td>
+                                    <td class="input-cell"><span class="example-text">шт.</span></td>
+                                    <td class="input-cell"><span class="example-text">12</span></td>
+                                    <td class="input-cell"><strong style="color: var(--primary-dark)">15</strong></td>
+                                </tr>
+                            </table>
+                            
+                            <!-- Завдання для квот -->
+                            <table class="template-table" style="margin-top: 1rem;">
+                                <tr class="section-row">
+                                    <td colspan="5">
+                                        <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <circle cx="12" cy="12" r="10"/>
+                                            <circle cx="12" cy="12" r="6"/>
+                                            <circle cx="12" cy="12" r="2"/>
+                                        </svg>
+                                        ЗАВДАННЯ ДЛЯ ДОСЯГНЕННЯ КВОТ
+                                        <span class="quota-badge" style="margin-left: 0.5rem;">
+                                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg>
+                                            Синій
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th style="width:5%">№</th>
+                                    <th style="width:35%">Завдання</th>
+                                    <th style="width:30%">Продукт (результат)</th>
+                                    <th style="width:15%">Час план</th>
+                                    <th style="width:15%">Час факт</th>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td class="input-cell"><span class="example-text" style="color: #2563eb;">Провести 10 зустрічей з потенційними клієнтами</span></td>
+                                    <td class="input-cell"><span class="example-text">10 зустрічей, 3 КП</span></td>
+                                    <td class="input-cell"><span class="example-text">10 год</span></td>
+                                    <td class="input-cell"></td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td class="input-cell"><span class="example-text" style="color: #2563eb;">Зробити 50 холодних дзвінків</span></td>
+                                    <td class="input-cell"><span class="example-text">8 призначених зустрічей</span></td>
+                                    <td class="input-cell"><span class="example-text">5 год</span></td>
+                                    <td class="input-cell"></td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td class="input-cell"></td>
+                                    <td class="input-cell"></td>
+                                    <td class="input-cell"></td>
+                                    <td class="input-cell"></td>
+                                </tr>
+                            </table>
+                            
+                            <!-- Регулярні завдання -->
+                            <table class="template-table" style="margin-top: 1rem;">
+                                <tr class="section-row">
+                                    <td colspan="5">
+                                        <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <polyline points="23 4 23 10 17 10"/>
+                                            <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/>
+                                        </svg>
+                                        РЕГУЛЯРНІ ЗАВДАННЯ
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>№</th>
+                                    <th>Завдання</th>
+                                    <th>Продукт</th>
+                                    <th>Час план</th>
+                                    <th>Час факт</th>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td><span class="example-text">Обробити вхідну комунікацію</span></td>
+                                    <td><span class="example-text">Оброблені листи</span></td>
+                                    <td style="background: var(--bg-secondary); color: var(--text-muted);">2,5 год</td>
+                                    <td class="input-cell"></td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td><span class="example-text">Координація з керівником</span></td>
+                                    <td><span class="example-text">Схвалений план</span></td>
+                                    <td style="background: var(--bg-secondary); color: var(--text-muted);">1,5 год</td>
+                                    <td class="input-cell"></td>
+                                </tr>
+                            </table>
+                            
+                            <!-- Завдання для узгодження -->
+                            <table class="template-table" style="margin-top: 1rem;">
+                                <tr class="section-row">
+                                    <td colspan="5">
+                                        <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                            <circle cx="9" cy="7" r="4"/>
+                                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                                            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                                        </svg>
+                                        ЗАВДАННЯ ДЛЯ УЗГОДЖЕННЯ
+                                        <span class="coord-badge" style="margin-left: 0.5rem;">
+                                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg>
+                                            Червоний
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>№</th>
+                                    <th>Завдання</th>
+                                    <th>Продукт</th>
+                                    <th>Час план</th>
+                                    <th>Час факт</th>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td class="input-cell"><span class="example-text" style="color: #dc2626;">Узгодити знижку 15% для клієнта</span></td>
+                                    <td class="input-cell"><span class="example-text">Погоджена знижка</span></td>
+                                    <td class="input-cell"><span class="example-text">30 хв</span></td>
+                                    <td class="input-cell"></td>
+                                </tr>
+                            </table>
+                            
+                            <!-- Підсумок -->
+                            <div style="margin-top: 1.25rem; display: flex; justify-content: space-between; align-items: center; padding: 1rem; background: var(--bg-accent); border-radius: var(--radius-md);">
+                                <div>
+                                    <strong>УСЬОГО ГОДИН ПЛАН:</strong>
+                                    <span style="margin-left: 0.5rem; font-size: 1.25rem; color: var(--primary-dark); font-weight: 700;">≈ 34 год</span>
+                                </div>
+                                <div style="text-align: right;">
+                                    <strong>СХВАЛЕНО:</strong>
+                                    <span style="margin-left: 0.5rem; padding: 0.25rem 0.75rem; background: #fefce8; border: 1px dashed #eab308; border-radius: 4px; color: var(--text-muted); font-style: italic;">підпис керівника</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="template-footer">
+                            <div class="template-legend">
+                                <div class="template-legend-item">
+                                    <span class="template-legend-color blue"></span>
+                                    <span>Завдання для квоти</span>
+                                </div>
+                                <div class="template-legend-item">
+                                    <span class="template-legend-color red"></span>
+                                    <span>Для узгодження</span>
+                                </div>
+                                <div class="template-legend-item">
+                                    <span class="template-legend-color yellow"></span>
+                                    <span>Поля для заповнення</span>
+                                </div>
+                            </div>
+                            <a href="${module.templateDownloadUrl}" target="_blank" class="template-download-btn">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                                    <polyline points="7 10 12 15 17 10"/>
+                                    <line x1="12" y1="15" x2="12" y2="3"/>
+                                </svg>
+                                Завантажити шаблон
+                            </a>
+                        </div>
+                    </div>
+                `;
             }
             
             // Questions section
@@ -2867,7 +3323,7 @@
             
             questionsHTML += '</div>';
             
-            lessonContent.innerHTML = accordionHTML + diagramHTML + downloadHTML + questionsHTML;
+            lessonContent.innerHTML = accordionHTML + diagramHTML + downloadHTML + templateHTML + questionsHTML;
             
             // Update homework textarea with all answers
             updateHomeworkFromAnswers();
