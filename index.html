@@ -1355,6 +1355,369 @@
             }
         }
 
+        /* ===== INTERACTIVE CHECKLIST ===== */
+        .checklist-section {
+            margin: 2rem 0;
+            background: var(--bg-primary);
+            border-radius: var(--radius-lg);
+            border: 2px solid var(--primary);
+            overflow: hidden;
+        }
+
+        .checklist-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 1.25rem;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+        }
+
+        .checklist-header-left {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .checklist-header-icon {
+            width: 24px;
+            height: 24px;
+        }
+
+        .checklist-header-title {
+            font-size: 1rem;
+            font-weight: 700;
+        }
+
+        .checklist-progress {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+
+        .checklist-body {
+            padding: 1.25rem;
+        }
+
+        .checklist-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .checklist-group:last-child {
+            margin-bottom: 0;
+        }
+
+        .checklist-group-title {
+            font-size: 0.813rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.75rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .checklist-group-icon {
+            width: 16px;
+            height: 16px;
+            color: var(--primary);
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            padding: 0.625rem 0;
+            border-bottom: 1px solid var(--border-light);
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .checklist-item:last-child {
+            border-bottom: none;
+        }
+
+        .checklist-item:hover {
+            background: var(--bg-accent);
+            margin: 0 -0.5rem;
+            padding-left: 0.5rem;
+            padding-right: 0.5rem;
+            border-radius: var(--radius-sm);
+        }
+
+        .checklist-checkbox {
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--border);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: all 0.2s ease;
+            margin-top: 2px;
+        }
+
+        .checklist-item.checked .checklist-checkbox {
+            background: var(--primary);
+            border-color: var(--primary);
+        }
+
+        .checklist-checkbox svg {
+            width: 14px;
+            height: 14px;
+            color: white;
+            opacity: 0;
+            transition: opacity 0.2s ease;
+        }
+
+        .checklist-item.checked .checklist-checkbox svg {
+            opacity: 1;
+        }
+
+        .checklist-text {
+            flex: 1;
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        .checklist-item.checked .checklist-text {
+            color: var(--text-muted);
+            text-decoration: line-through;
+        }
+
+        .checklist-number {
+            color: var(--text-muted);
+            font-weight: 600;
+            margin-right: 0.25rem;
+        }
+
+        .checklist-footer {
+            padding: 1rem 1.25rem;
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .checklist-status {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+        }
+
+        .checklist-status strong {
+            color: var(--primary-dark);
+        }
+
+        .checklist-reset-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.375rem;
+            padding: 0.5rem 0.875rem;
+            background: var(--bg-primary);
+            color: var(--text-secondary);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            font-size: 0.813rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .checklist-reset-btn:hover {
+            background: var(--bg-accent);
+            border-color: var(--primary);
+            color: var(--primary-dark);
+        }
+
+        .checklist-reset-btn svg {
+            width: 14px;
+            height: 14px;
+        }
+
+        /* ===== PRACTICE MODULE ===== */
+        .practice-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .practice-step {
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            background: var(--bg-primary);
+            transition: all 0.2s ease;
+        }
+
+        .practice-step:hover {
+            border-color: var(--primary-light);
+        }
+
+        .practice-step.open {
+            border-color: var(--primary);
+            box-shadow: 0 2px 8px rgba(34, 197, 94, 0.1);
+        }
+
+        .practice-step-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem 1.25rem;
+            background: var(--bg-secondary);
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .practice-step-header:hover {
+            background: var(--bg-accent);
+        }
+
+        .practice-step.open .practice-step-header {
+            background: var(--bg-accent);
+            border-bottom: 1px solid var(--primary-light);
+        }
+
+        .practice-step-number {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            border-radius: 50%;
+            font-size: 0.875rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .practice-step.intro .practice-step-number {
+            background: linear-gradient(135deg, var(--blue) 0%, var(--blue-dark) 100%);
+        }
+
+        .practice-step.result .practice-step-number {
+            background: linear-gradient(135deg, var(--orange) 0%, #c2410c 100%);
+        }
+
+        .practice-step-title {
+            flex: 1;
+            font-size: 0.938rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            line-height: 1.4;
+        }
+
+        .practice-step-icon {
+            width: 20px;
+            height: 20px;
+            color: var(--text-muted);
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .practice-step.open .practice-step-icon {
+            transform: rotate(180deg);
+            color: var(--primary);
+        }
+
+        .practice-step-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .practice-step.open .practice-step-content {
+            max-height: 2000px;
+        }
+
+        .practice-step-body {
+            padding: 1.25rem;
+            font-size: 0.938rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            white-space: pre-line;
+            border-top: 1px solid var(--border-light);
+        }
+
+        .practice-step-body strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        /* Practice Download Section */
+        .practice-download {
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: linear-gradient(135deg, var(--bg-accent) 0%, #ecfdf5 100%);
+            border-radius: var(--radius-lg);
+            border: 2px solid var(--primary);
+            text-align: center;
+        }
+
+        .practice-download-icon {
+            width: 48px;
+            height: 48px;
+            margin: 0 auto 1rem;
+            color: var(--primary);
+        }
+
+        .practice-download-title {
+            font-size: 1.125rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .practice-download-desc {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.25rem;
+        }
+
+        .practice-download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            border: none;
+            border-radius: var(--radius-md);
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(34, 197, 94, 0.3);
+        }
+
+        .practice-download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(34, 197, 94, 0.4);
+        }
+
+        .practice-download-btn svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .practice-download-note {
+            margin-top: 1rem;
+            font-size: 0.813rem;
+            color: var(--text-muted);
+        }
+
         /* ===== PLANNING LEVELS DIAGRAM ===== */
         .diagram-section {
             margin: 2rem 0;
@@ -2823,6 +3186,629 @@
             ],
             result: "Відповіді на 3 питання + завантажений шаблон плану",
             time: 35
+        },
+        {
+            id: 4,
+            title: "ПРОДУКТ ТА ОЦІНКА ЧАСУ",
+            subtitle: "Як зробити тижневий план керованим",
+            type: "article",
+            articleSections: [
+                {
+                    title: "Що ви отримаєте з цієї статті",
+                    content: `Після прочитання ви будете розуміти:
+
+<span style="color:#16a34a">✓</span> як працювати з тижневим планом так, щоб він давав результат, а не "зайнятість"
+
+<span style="color:#16a34a">✓</span> навіщо у кожної задачі має бути продукт (ЦКП) і оцінка часу
+
+<span style="color:#16a34a">✓</span> як керівнику перевіряти план підлеглого, щоб піднімати його ефективність, а не добивати мотивацію`
+                },
+                {
+                    title: "Чому «людина завжди зайнята» — не аргумент, а діагноз",
+                    content: `Коли я вперше впроваджував планування у своїх компаніях, я зіткнувся з типовою проблемою: керівник постійно "в роботі", але делегувати йому щось неможливо — "немає часу".
+
+Коли він приніс перший тижневий план, я побачив:
+
+• 3 сторінки
+• близько 50 дрібних задач
+• жодних пріоритетів
+• жодного часу
+• жодних чітких результатів
+
+На вигляд — "дуже працьовитий".
+По факту — план не керований.
+
+<strong>Правило TALKO System:</strong>
+Якщо план складається з десятків дрібних дій без продукту і часу — це не план, а список тривоги.`
+                },
+                {
+                    title: "Оцінка часу: момент, коли включається реальність",
+                    content: `Через 1–2 тижні стало видно: людина стабільно не виконує навіть 50% плану.
+
+Ми сіли і порахували час на кожну задачу.
+
+Вийшло близько <strong>150 годин</strong>.
+А в робочому тижні — <strong>40</strong> (і то на папері).
+
+<strong>Результат такого планування завжди один:</strong>
+
+• постійний провал
+• відчуття "я нікчемний"
+• ненависть до планування
+• падіння результативності
+
+І найіронічніше: людина може бути реально продуктивною, але відчувати себе невдахою, бо план був фантастичний.
+
+<strong>Висновок:</strong>
+Оцінка часу — це не бюрократія. Це захист від самообману і демотивації.`
+                },
+                {
+                    title: "Часова оцінка автоматично змушує обирати пріоритети",
+                    content: `Поки часу немає — людина пише все підряд.
+
+Коли з'являється час — виникає ключове управлінське питання:
+
+<strong>Що важливе, а що шум?</strong>
+<strong>Що дає результат, а що "треба б зробити"?</strong>
+
+Саме тут планування перестає бути записником і стає інструментом управління.`
+                },
+                {
+                    title: "Чому «40 годин» майже ніколи не доступні на задачі",
+                    content: `Є ще одна системна помилка: люди забувають регулярні задачі.
+
+<strong>В реальному житті керівника є:</strong>
+
+• координації з підлеглими
+• наради
+• листування, дзвінки, месенджери
+• роздача розпоряджень
+• планування і щоденне коригування
+
+<strong>Навіть якщо грубо порахувати:</strong>
+
+• 20 хв/день на координацію → 2 години/тиждень (часто 3–4)
+• рутина 30 хв/день → 2,5 години/тиждень
+• 1–2 наради → 1–3 години
+• планування тижня + щоденні корекції → 1–2 години
+
+<strong>В результаті</strong> реальний ресурс на "виробничі задачі" — не 40, а <strong>30–35 годин</strong>, а інколи й менше.
+
+<strong>Правило TALKO System:</strong>
+Якщо підлеглий "запланував всі 40 годин" — він або буде працювати 60, або провалить найважливіше.`
+                },
+                {
+                    title: "Продукт (ЦКП): без нього задача не контролюється",
+                    content: `Оцінка часу без продукту — половина системи.
+
+У TALKO System кожна задача повинна мати <strong>продукт</strong> — те, що можна перевірити.
+
+<span style="color:#dc2626">✗</span> <strong>Погано (дія):</strong>
+• "попрацювати з клієнтами"
+• "зробити документи"
+• "підготувати рекламу"
+• "поспілкуватися з командою"
+
+<span style="color:#16a34a">✓</span> <strong>Добре (продукт / ЦКП):</strong>
+• "узгоджений графік лікарів на січень у таблиці + підтвердження від 4 лікарів"
+• "10 лідів у CRM зі статусом і наступним кроком"
+• "3 креативи + 2 тексти + план запуску на 7 днів"
+• "файл ТЗ (версія 1.0) погоджений зі мною"
+
+<strong>Закон:</strong>
+Немає продукту — немає керування. Є тільки "робив щось".`
+                },
+                {
+                    title: "Як перевіряти план підлеглого: протокол керівника",
+                    content: `<strong>1) Перевірити продуктність</strong>
+
+На кожну задачу запитай: "Що буде готове?"
+Якщо відповідь не конкретна — переформулювати.
+
+<strong>2) Перевірити математику часу</strong>
+
+• сумарно ≤ 30–35 годин задач (плюс регулярні блоки)
+• є запас на "життя"
+
+<strong>3) Знайти топ-5 результатів тижня</strong>
+
+Якщо в плані 50 пунктів однаково важливі — це хаос.
+
+<strong>4) Вирізати / делегувати / відкласти</strong>
+
+Питання керівника:
+• "Що ми НЕ робимо цього тижня?"
+• "Що можна делегувати?"
+• "Що можна об'єднати в блок?"
+
+<strong>5) Додати план/факт</strong>
+
+Наприкінці тижня:
+• час план / час факт
+• список "незапланованого" з часом
+• короткий висновок: що міняємо наступного тижня`
+                },
+                {
+                    title: "Як оцінювати час, якщо людина раніше не планувала",
+                    content: `Точність не з'явиться одразу. Це нормально.
+
+<strong>Рекомендація на старт:</strong>
+
+• перший план робити на <strong>60% реального часу</strong>
+• вести "незаплановані задачі" з часом
+• щотижня коригувати оцінки
+
+<strong>Планування — це не "один раз налаштував і працює".</strong>
+Це цикл: план → виконання → факт → корекція.`
+                },
+                {
+                    title: "Головна помилка керівників: «нехай напружиться»",
+                    content: `Деякі керівники думають: "він запланував забагато — хай старається".
+
+<strong>Погана новина:</strong> чудес не буває.
+Якщо не сходиться на папері — не зійдеться в житті.
+
+<strong>Надлишковий оптимізм створює:</strong>
+
+• провал
+• демотивацію
+• саботаж планування
+
+<strong>Управлінське правило:</strong>
+План має бути реалістичним. Тиск має бути на пріоритет і результат, а не на обсяг задач.`
+                },
+                {
+                    title: "Висновок TALKO System",
+                    content: `<strong>Тижневий план стає робочим, коли:</strong>
+
+<span style="color:#16a34a">✓</span> у кожній задачі є продукт (ЦКП)
+
+<span style="color:#16a34a">✓</span> у кожній задачі є оцінка часу
+
+<span style="color:#16a34a">✓</span> сумарний час сходиться з реальністю
+
+<span style="color:#16a34a">✓</span> є пріоритети, а не список
+
+<span style="color:#16a34a">✓</span> є план/факт і корекція
+
+Тоді планування перестає бути "формальністю" і стає інструментом управління результатом.`
+                }
+            ],
+            questions: [
+                {
+                    id: 1,
+                    question: "Чому план на 150 годин при 40-годинному тижні призводить до демотивації, а не до 'старання'?",
+                    placeholder: "Опишіть психологічний та практичний вплив нереалістичного плану..."
+                },
+                {
+                    id: 2,
+                    question: "Яка різниця між 'попрацювати з клієнтами' та '10 лідів у CRM зі статусом і наступним кроком'? Чому друге — це продукт?",
+                    placeholder: "Поясніть, що робить формулювання керованим і перевіряємим..."
+                },
+                {
+                    id: 3,
+                    question: "Чому реальний ресурс на виробничі задачі — 30-35 годин, а не 40? Куди йде решта часу?",
+                    placeholder: "Перерахуйте регулярні активності, які 'з'їдають' час..."
+                }
+            ],
+            result: "Відповіді на 3 питання про продукти та час",
+            time: 20
+        },
+        {
+            id: 5,
+            title: "ЧЕК-ЛИСТ ПЕРЕВІРКИ ПЛАНУ",
+            subtitle: "Як переконатися, що план складено правильно",
+            subtitle: "Як переконатися, що план складено правильно",
+            type: "article",
+            articleSections: [
+                {
+                    title: "Навіщо потрібен чек-лист перевірки",
+                    content: `Скласти план — це половина справи. Друга половина — переконатися, що план складено ПРАВИЛЬНО.
+
+<strong>Типова ситуація:</strong>
+Співробітник приносить план. Керівник дивиться — начебто все є. Схвалює. А потім виявляється:
+— завдання сформульовані розмито
+— часу не вистачає фізично
+— квота не забезпечена завданнями
+— продукти не визначені
+
+<strong>Результат:</strong> план не виконується, всі розчаровані, система "не працює".
+
+<strong>Рішення:</strong> перед схваленням перевіряти план за чек-листом. Кожен пункт — це фільтр, який не пропускає погані плани.
+
+Цей чек-лист можна використовувати:
+— керівнику для перевірки планів підлеглих
+— співробітнику для самоперевірки перед подачею
+— власнику для перевірки планів керівників`
+                },
+                {
+                    title: "Блок 1: Загальна інформація",
+                    content: `Перші пункти перевіряють, чи план правильно оформлений і ідентифікований.
+
+<strong>1. Є назва плану</strong>
+З назви має бути зрозуміло, чий це план і на яку посаду.
+<span style="color:#dc2626">✗</span> Погано: "План"
+<span style="color:#16a34a">✓</span> Добре: "План керівника відділу продажів"
+
+<strong>2. Вказано актуальну дату</strong>
+Дата початку тижня, діапазон дат або номер тижня.
+<span style="color:#dc2626">✗</span> Погано: дата відсутня або застаріла
+<span style="color:#16a34a">✓</span> Добре: "13.01.2025 - 19.01.2025" або "Тиждень №3"
+
+<strong>3. Вказано посаду співробітника</strong>
+Якщо людина суміщає кілька посад — вказати всі.
+<span style="color:#dc2626">✗</span> Погано: посада не вказана
+<span style="color:#16a34a">✓</span> Добре: "Керівник відділу продажів + Менеджер з ключових клієнтів"`
+                },
+                {
+                    title: "Блок 2: Статистики",
+                    content: `Статистики — це числові показники результату. Без них план — просто список справ.
+
+<strong>4. Є блок зі статистиками</strong>
+Обов'язково вказано ГОЛОВНУ статистику посади — той показник, заради якого існує ця посада.
+
+<strong>5. Додаткові статистики (за потреби)</strong>
+Якщо посада впливає на кілька показників — вказати всі важливі.
+
+<strong>6. Назва статистики</strong>
+Чітке формулювання, що саме вимірюється.
+<span style="color:#dc2626">✗</span> Погано: "Результат", "Показник"
+<span style="color:#16a34a">✓</span> Добре: "Сума продажів", "Кількість нових клієнтів"
+
+<strong>7. Одиниці виміру</strong>
+В чому вимірюється: грн, шт., %, бали тощо.
+
+<strong>8. Результат минулого тижня</strong>
+Фактична цифра — що було досягнуто.
+
+<strong>9. Квота на наступний тиждень</strong>
+Планова цифра — що має бути досягнуто. Квота має бути по КОЖНІЙ статистиці.`
+                },
+                {
+                    title: "Блок 3: Структура завдань",
+                    content: `План має містити правильно організовані блоки завдань.
+
+<strong>10. Є блок регулярних завдань</strong>
+Завдання, які повторюються щотижня. Можуть бути на початку або в кінці плану.
+
+<strong>11. Є блок основних завдань тижня</strong>
+Завдання сформульовані так, щоб було зрозуміло, ЩО САМЕ співробітник робитиме.
+
+<strong>12. Завдання забезпечують досягнення квоти</strong>
+Критичний пункт! Якщо квота 100 000 грн — чи є в плані завдання, які реально дадуть ці 100 000?
+
+Приклад перевірки:
+Квота: 100 000 грн
+Завдання: "Провести 10 зустрічей" (конверсія 30% = 3 угоди × 35 000 = 105 000 грн)
+<span style="color:#16a34a">✓</span> Квота забезпечена
+
+<strong>20. Є завдання з програм та проектів</strong>
+Якщо є активні проекти — завдання по них мають бути в плані.
+
+<strong>22. Є розділ "Регулярні завдання"</strong>
+Окремий блок для повторюваних завдань.
+
+<strong>23. Є розділ "Незаплановані завдання"</strong>
+Місце для запису того, що з'явиться по ходу тижня.`
+                },
+                {
+                    title: "Блок 4: Якість формулювань",
+                    content: `Формулювання завдань — це 80% успіху плану.
+
+<strong>13. Правильне формулювання завдання</strong>
+Завдання відповідає на питання: "Що зробити?"
+
+<span style="color:#dc2626">✗</span> НЕПРАВИЛЬНО:
+— "Зробити дзвінки клієнтам" (скільки? яким?)
+— "Провести зустрічі з клієнтами" (скільки? з ким?)
+— "Працювати над проектом" (що саме?)
+
+<span style="color:#16a34a">✓</span> ПРАВИЛЬНО:
+— "Зробити 10 дзвінків клієнтам з бази повторних продажів"
+— "Провести 5 зустрічей з потенційними клієнтами"
+— "Підготувати технічне завдання для розробника"
+
+<strong>14. За кожним завданням вказано продукт</strong>
+Продукт — це результат, який можна побачити/показати.
+
+<span style="color:#dc2626">✗</span> НЕПРАВИЛЬНО:
+— "Зроблені дзвінки" (це процес, не результат)
+— "Проведена зустріч" (що отримали від зустрічі?)
+
+<span style="color:#16a34a">✓</span> ПРАВИЛЬНО:
+— "3 призначені зустрічі"
+— "2 закриті угоди"
+— "Підписаний договір"
+
+<strong>Правило:</strong> Продукти мають бути певними, ясними та досяжними.`
+                },
+                {
+                    title: "Блок 5: Час і реалістичність",
+                    content: `Найчастіша причина провалу планів — нереалістична оцінка часу.
+
+<strong>17. Вказано час для кожного завдання</strong>
+Кожне завдання має оцінку в годинах або хвилинах.
+
+<strong>18. Вказано загальний час</strong>
+Сума всіх запланованих годин.
+
+<strong>15. Загальний час реалістичний</strong>
+Критичний пункт!
+
+<strong>Правило TALKO System:</strong>
+Запланований час не повинен перевищувати 60-70% робочого часу тижня.
+
+Чому не 100%? Тому що:
+— завжди є незаплановане
+— є перерви, переключення, комунікація
+— є форс-мажори
+
+<strong>Приклад:</strong>
+Робочий тиждень: 40 годин
+60-70% = 24-28 годин на заплановані завдання
+Решта = буфер на незаплановане
+
+Якщо в плані 35+ годин завдань — план НЕРЕАЛІСТИЧНИЙ, навіть якщо людина готова "постаратися".`
+                },
+                {
+                    title: "Блок 6: Схвалення",
+                    content: `<strong>16. Є позначка схвалення керівником</strong>
+
+Без схвалення план — це просто список бажань.
+
+<strong>Як схвалювати:</strong>
+— Паперовий план: підпис керівника
+— Електронний документ: коментар "Схвалено" + дата + ім'я
+— Google Таблиці: коментар до клітинки або окреме поле
+
+<strong>19. Схвалення керівника зафіксоване</strong>
+Має бути зрозуміло: хто схвалив, коли схвалив.
+
+<strong>Що означає схвалення:</strong>
+— Керівник перевірив план
+— Пріоритети правильні
+— Час реалістичний
+— Квота забезпечена
+— Можна виконувати`
+                },
+                {
+                    title: "Типові помилки при плануванні",
+                    content: `<strong>ПОМИЛКА 1: Не прикріплюється план минулого тижня</strong>
+
+При подачі нового плану має бути доданий план минулого тижня з відмітками про виконання. Без цього неможливо:
+— оцінити, чи виконано попередній план
+— проаналізувати точність оцінки часу
+— побачити незаплановані завдання
+
+<strong>ПОМИЛКА 2: План минулого тижня не заповнено до кінця</strong>
+
+Часто співробітники:
+— не вносять фактичний час
+— не ставлять дати виконання
+— не записують незаплановані завдання
+
+Результат: неможливо сказати, чи досягнуто плану і скільки часу реально зайняло виконання.
+
+<strong>ПОМИЛКА 3: Завдання без продуктів</strong>
+
+"Працювати над..." — це не завдання.
+"Займатися..." — це не завдання.
+"Контролювати..." — це не завдання.
+
+Завдання має закінчуватись чимось, що можна ПОКАЗАТИ.`
+                },
+                {
+                    title: "Важливе зауваження для власників",
+                    content: `<strong>Планування у вашій компанії буде працювати ЛИШЕ в тому випадку, якщо ви особисто вестимете свій тижневий план.</strong>
+
+Без цього буде складно добитися від керівників використання цього інструменту.
+
+Чому?
+— "Роби як я" працює краще ніж "роби як я кажу"
+— Ви зрозумієте складнощі з власного досвіду
+— Зможете давати практичні поради
+— Матимете моральне право вимагати
+
+<strong>Що зробити прямо зараз:</strong>
+
+Якщо ви ще не внесли у ваш календар регулярне завдання "Скласти план на тиждень" — саме час це зробити.
+
+Рекомендований час: п'ятниця, остання година робочого дня, або понеділок, перша година.`
+                }
+            ],
+            hasChecklist: true,
+            questions: [
+                {
+                    id: 1,
+                    question: "Чому загальний запланований час не повинен перевищувати 60-70% робочого часу? Що відбувається, якщо планувати на 100%?",
+                    placeholder: "Поясніть своїми словами, чому потрібен буфер часу..."
+                },
+                {
+                    id: 2,
+                    question: "Яка різниця між 'Зробити дзвінки клієнтам' і 'Зробити 10 дзвінків клієнтам з бази повторних продажів'? Чому друге формулювання краще?",
+                    placeholder: "Опишіть, що робить друге формулювання кращим для планування та контролю..."
+                },
+                {
+                    id: 3,
+                    question: "Чому власник бізнесу має особисто вести свій тижневий план? Як це впливає на впровадження планування в компанії?",
+                    placeholder: "Поясніть зв'язок між особистим прикладом власника і успіхом системи..."
+                }
+            ],
+            result: "Відповіді на 3 питання + засвоєний чек-лист",
+            time: 25
+        },
+        {
+            id: 6,
+            title: "ПРАКТИЧНЕ ЗАВДАННЯ №1",
+            subtitle: "Складання першого тижневого плану",
+            type: "practice",
+            practiceSteps: [
+                {
+                    title: "Мета завдання",
+                    content: `<strong>Навчитися:</strong>
+
+<span style="color:#16a34a">✓</span> працювати з тижневим планом як з інструментом управління, а не списком справ
+
+<span style="color:#16a34a">✓</span> правильно враховувати регулярні задачі залежно від ролі
+
+<span style="color:#16a34a">✓</span> сформувати реалістичний план на тиждень, який можна виконати і перевірити`
+                },
+                {
+                    title: "Крок 1. Оберіть роль для плану",
+                    content: `Перш ніж відкривати шаблон, дайте відповідь на ключове питання:
+
+<strong>Для якої ролі я зараз складаю тижневий план?</strong>
+
+Оберіть ОДНУ роль (навіть якщо в реальності ви виконуєте кілька).
+
+<strong>Варіанти ролей:</strong>
+
+○ Власник бізнесу
+○ Директор / керівник компанії
+○ Керівник підрозділу (маркетинг, продажі, виробництво, адміністрування тощо)
+○ Лінійний керівник / старший спеціаліст
+○ Спеціаліст (без підлеглих)
+
+<strong>Важливо:</strong>
+Якщо ви виконуєте кілька ролей — спочатку оберіть одну основну.
+Окремий план "на всі ролі одразу" — типова помилка і джерело перевантаження.`
+                },
+                {
+                    title: "Крок 2. Оберіть відповідний шаблон",
+                    content: `У документі ви знайдете кілька аркушів із шаблонами планів, кожен — для свого рівня відповідальності.
+
+<strong>Вони відрізняються лише переліком регулярних задач, тому що:</strong>
+
+• у власника бізнесу одні регулярні функції
+• у керівника підрозділу — інші
+• у спеціаліста — треті
+
+Чим вища роль — тим більше регулярних управлінських задач (координація, контроль, аналіз, планування).
+
+<strong>Оберіть шаблон, який відповідає обраній ролі, і працюйте тільки з ним.</strong>`
+                },
+                {
+                    title: "Крок 3. Заповніть блок регулярних завдань",
+                    content: `<strong>Почніть НЕ з разових задач, а з регулярних.</strong>
+
+У шаблоні вже наведено типовий перелік регулярних завдань для кожної ролі:
+
+• наради
+• координації з підлеглими
+• аналіз показників
+• планування
+• звітність
+• комунікації
+
+<strong>Ваше завдання:</strong>
+
+1. Переглянути список регулярних завдань
+2. Відмітити ті, які реально є у вашій ролі
+3. Вказати реалістичний час на кожне з них
+
+<strong>Пам'ятайте:</strong> регулярні задачі з'їдають більшу частину тижня.
+Якщо ви їх не врахуєте — найважливіші задачі злетять першими.`
+                },
+                {
+                    title: "Крок 4. Додайте ключові задачі тижня",
+                    content: `Після регулярних задач у вас залишається обмежений ресурс часу.
+
+<strong>Тепер додайте ключові задачі тижня (не більше 5–7), дотримуючись правил TALKO System:</strong>
+
+Для кожної задачі:
+
+<span style="color:#16a34a">✓</span> чітко сформулюйте продукт (ЦКП)
+
+<span style="color:#16a34a">✓</span> вкажіть оцінку часу
+
+<span style="color:#16a34a">✓</span> перевірте, що задача реально вписується в тиждень
+
+<strong>Якщо задач більше 7 — ви плануєте не результат, а імітацію зайнятості.</strong>`
+                },
+                {
+                    title: "Крок 5. Перевірте план на реалістичність",
+                    content: `<strong>Перед тим як вважати план готовим, перевірте його:</strong>
+
+○ Загальний час не перевищує доступний ресурс (30–35 годин для більшості ролей)
+
+○ У кожної задачі є продукт, який можна перевірити
+
+○ Видно 3–5 ключових результатів тижня
+
+○ Є запас на непередбачуване
+
+○ Зрозуміло, що НЕ робиться цього тижня
+
+<strong>Якщо план не проходить цю перевірку — спростіть його.</strong>`
+                },
+                {
+                    title: "Крок 6. Якщо ви виконуєте кілька ролей",
+                    content: `У шаблоні ви знайдете приклад заповнення плану при виконанні кількох посад.
+
+<strong>Але:</strong>
+
+<span style="color:#dc2626">✗</span> не починайте з цього варіанту
+<span style="color:#16a34a">✓</span> спочатку навчіться планувати одну роль
+
+Після цього ви зможете:
+
+• або розділяти плани по ролях
+• або свідомо об'єднувати їх в один, розуміючи обмеження`
+                },
+                {
+                    title: "Технічна примітка",
+                    content: `<span style="color:#16a34a">✓</span> Збережіть собі копію документа і працюйте у власному файлі
+
+<span style="color:#16a34a">✓</span> Починайте з простих таблиць
+
+<span style="color:#16a34a">✓</span> Не автоматизуйте планування на старті
+
+<strong>Автоматизація має сенс після того, як з'явився навик мислити продуктами і часом.</strong>
+
+Пізніше ви зможете:
+
+• перейти в Платрум
+• або використати будь-який інший інструмент управління`
+                },
+                {
+                    title: "Результат завдання",
+                    content: `<strong>Після виконання цього практичного завдання у вас має бути:</strong>
+
+<span style="color:#16a34a">✓</span> тижневий план для конкретної ролі
+
+<span style="color:#16a34a">✓</span> з урахуванням регулярних задач
+
+<span style="color:#16a34a">✓</span> з реалістичною оцінкою часу
+
+<span style="color:#16a34a">✓</span> з чітко сформульованими продуктами
+
+<strong>Це буде ваша стартова точка для подальшого навчання і корекції планування.</strong>`
+                }
+            ],
+            practiceDownload: {
+                title: "Шаблони тижневих планів по ролях",
+                description: "Оберіть свою роль та заповніть відповідний шаблон",
+                url: "https://docs.google.com/spreadsheets/d/1GDb6mfr_4zYQ3pI8ggWetz4B_nCQhRz5/edit?usp=sharing&ouid=101363296124875097142&rtpof=true&sd=true"
+            },
+            questions: [
+                {
+                    id: 1,
+                    question: "Яку роль ви обрали для свого першого тижневого плану? Чому саме цю?",
+                    placeholder: "Вкажіть роль та поясніть свій вибір..."
+                },
+                {
+                    id: 2,
+                    question: "Скільки годин на тиждень 'з'їдають' ваші регулярні завдання? Перерахуйте основні.",
+                    placeholder: "Наприклад: координації - 3 год, наради - 2 год, планування - 1 год..."
+                },
+                {
+                    id: 3,
+                    question: "Назвіть 3-5 ключових результатів (продуктів), які ви плануєте отримати цього тижня.",
+                    placeholder: "Сформулюйте конкретні продукти, які можна перевірити..."
+                }
+            ],
+            result: "Заповнений тижневий план + відповіді на питання",
+            time: 45
         }
     ];
 
@@ -2907,6 +3893,7 @@
                             module.homeworkText = savedModule.homeworkText || '';
                             module.completedAt = savedModule.completedAt || null;
                             module.answers = savedModule.answers || {};
+                            module.checklistState = savedModule.checklistState || [];
                         }
                     });
                 }
@@ -2937,7 +3924,8 @@
                     completed: m.completed || false,
                     homeworkText: m.homeworkText || '',
                     completedAt: m.completedAt || null,
-                    answers: m.answers || {}
+                    answers: m.answers || {},
+                    checklistState: m.checklistState || []
                 })),
                 lastUpdated: firebase.firestore.FieldValue.serverTimestamp()
             };
@@ -3360,6 +4348,191 @@
                 `;
             }
             
+            // Checklist section
+            let checklistHTML = '';
+            if (module.hasChecklist) {
+                checklistHTML = `
+                    <div class="checklist-section">
+                        <div class="checklist-header">
+                            <div class="checklist-header-left">
+                                <svg class="checklist-header-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M9 11l3 3L22 4"/>
+                                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+                                </svg>
+                                <span class="checklist-header-title">ЧЕК-ЛИСТ ПЕРЕВІРКИ ПЛАНУ</span>
+                            </div>
+                            <div class="checklist-progress">
+                                <span id="checklist-count-${module.id}">0</span>/23
+                            </div>
+                        </div>
+                        
+                        <div class="checklist-body">
+                            <div class="checklist-group">
+                                <div class="checklist-group-title">
+                                    <svg class="checklist-group-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                        <polyline points="14 2 14 8 20 8"/>
+                                    </svg>
+                                    Загальна інформація
+                                </div>
+                                <div class="checklist-item" onclick="toggleChecklistItem(this, ${module.id})">
+                                    <div class="checklist-checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                                    <div class="checklist-text"><span class="checklist-number">1.</span> Є назва плану, з якої зрозуміло чий це план</div>
+                                </div>
+                                <div class="checklist-item" onclick="toggleChecklistItem(this, ${module.id})">
+                                    <div class="checklist-checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                                    <div class="checklist-text"><span class="checklist-number">2.</span> Вказано актуальну дату звітного тижня</div>
+                                </div>
+                                <div class="checklist-item" onclick="toggleChecklistItem(this, ${module.id})">
+                                    <div class="checklist-checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                                    <div class="checklist-text"><span class="checklist-number">3.</span> Вказано посаду співробітника</div>
+                                </div>
+                            </div>
+                            
+                            <div class="checklist-group">
+                                <div class="checklist-group-title">
+                                    <svg class="checklist-group-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <line x1="18" y1="20" x2="18" y2="10"/>
+                                        <line x1="12" y1="20" x2="12" y2="4"/>
+                                        <line x1="6" y1="20" x2="6" y2="14"/>
+                                    </svg>
+                                    Статистики
+                                </div>
+                                <div class="checklist-item" onclick="toggleChecklistItem(this, ${module.id})">
+                                    <div class="checklist-checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                                    <div class="checklist-text"><span class="checklist-number">4.</span> Є блок зі статистиками, вказано головну статистику посади</div>
+                                </div>
+                                <div class="checklist-item" onclick="toggleChecklistItem(this, ${module.id})">
+                                    <div class="checklist-checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                                    <div class="checklist-text"><span class="checklist-number">5.</span> Додаткові статистики (за потреби)</div>
+                                </div>
+                                <div class="checklist-item" onclick="toggleChecklistItem(this, ${module.id})">
+                                    <div class="checklist-checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                                    <div class="checklist-text"><span class="checklist-number">6.</span> Назва статистики чітко сформульована</div>
+                                </div>
+                                <div class="checklist-item" onclick="toggleChecklistItem(this, ${module.id})">
+                                    <div class="checklist-checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                                    <div class="checklist-text"><span class="checklist-number">7.</span> Вказано одиниці виміру</div>
+                                </div>
+                                <div class="checklist-item" onclick="toggleChecklistItem(this, ${module.id})">
+                                    <div class="checklist-checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                                    <div class="checklist-text"><span class="checklist-number">8.</span> Вказано результат минулого тижня</div>
+                                </div>
+                                <div class="checklist-item" onclick="toggleChecklistItem(this, ${module.id})">
+                                    <div class="checklist-checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                                    <div class="checklist-text"><span class="checklist-number">9.</span> Вказано квоту на наступний тиждень по всіх статистиках</div>
+                                </div>
+                            </div>
+                            
+                            <div class="checklist-group">
+                                <div class="checklist-group-title">
+                                    <svg class="checklist-group-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="3" y="3" width="18" height="18" rx="2"/>
+                                        <line x1="3" y1="9" x2="21" y2="9"/>
+                                    </svg>
+                                    Структура завдань
+                                </div>
+                                <div class="checklist-item" onclick="toggleChecklistItem(this, ${module.id})">
+                                    <div class="checklist-checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                                    <div class="checklist-text"><span class="checklist-number">10.</span> Є блок регулярних завдань</div>
+                                </div>
+                                <div class="checklist-item" onclick="toggleChecklistItem(this, ${module.id})">
+                                    <div class="checklist-checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                                    <div class="checklist-text"><span class="checklist-number">11.</span> Є блок основних завдань тижня, сформульованих конкретно</div>
+                                </div>
+                                <div class="checklist-item" onclick="toggleChecklistItem(this, ${module.id})">
+                                    <div class="checklist-checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                                    <div class="checklist-text"><span class="checklist-number">12.</span> Завдання реально призведуть до досягнення квоти</div>
+                                </div>
+                                <div class="checklist-item" onclick="toggleChecklistItem(this, ${module.id})">
+                                    <div class="checklist-checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                                    <div class="checklist-text"><span class="checklist-number">20.</span> Є завдання з програм та проектів (якщо є активні)</div>
+                                </div>
+                                <div class="checklist-item" onclick="toggleChecklistItem(this, ${module.id})">
+                                    <div class="checklist-checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                                    <div class="checklist-text"><span class="checklist-number">22.</span> Є розділ "Регулярні завдання"</div>
+                                </div>
+                                <div class="checklist-item" onclick="toggleChecklistItem(this, ${module.id})">
+                                    <div class="checklist-checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                                    <div class="checklist-text"><span class="checklist-number">23.</span> Є розділ "Незаплановані завдання"</div>
+                                </div>
+                            </div>
+                            
+                            <div class="checklist-group">
+                                <div class="checklist-group-title">
+                                    <svg class="checklist-group-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
+                                        <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
+                                    </svg>
+                                    Якість формулювань
+                                </div>
+                                <div class="checklist-item" onclick="toggleChecklistItem(this, ${module.id})">
+                                    <div class="checklist-checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                                    <div class="checklist-text"><span class="checklist-number">13.</span> Кожне завдання відповідає на питання "Що зробити?"</div>
+                                </div>
+                                <div class="checklist-item" onclick="toggleChecklistItem(this, ${module.id})">
+                                    <div class="checklist-checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                                    <div class="checklist-text"><span class="checklist-number">14.</span> За кожним завданням вказано конкретний продукт</div>
+                                </div>
+                            </div>
+                            
+                            <div class="checklist-group">
+                                <div class="checklist-group-title">
+                                    <svg class="checklist-group-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <circle cx="12" cy="12" r="10"/>
+                                        <polyline points="12 6 12 12 16 14"/>
+                                    </svg>
+                                    Час і реалістичність
+                                </div>
+                                <div class="checklist-item" onclick="toggleChecklistItem(this, ${module.id})">
+                                    <div class="checklist-checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                                    <div class="checklist-text"><span class="checklist-number">17.</span> Вказано час для кожного завдання</div>
+                                </div>
+                                <div class="checklist-item" onclick="toggleChecklistItem(this, ${module.id})">
+                                    <div class="checklist-checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                                    <div class="checklist-text"><span class="checklist-number">18.</span> Вказано загальний час всіх завдань</div>
+                                </div>
+                                <div class="checklist-item" onclick="toggleChecklistItem(this, ${module.id})">
+                                    <div class="checklist-checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                                    <div class="checklist-text"><span class="checklist-number">15.</span> Загальний час не перевищує 60-70% робочого часу тижня</div>
+                                </div>
+                            </div>
+                            
+                            <div class="checklist-group">
+                                <div class="checklist-group-title">
+                                    <svg class="checklist-group-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M9 11l3 3L22 4"/>
+                                        <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+                                    </svg>
+                                    Схвалення
+                                </div>
+                                <div class="checklist-item" onclick="toggleChecklistItem(this, ${module.id})">
+                                    <div class="checklist-checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                                    <div class="checklist-text"><span class="checklist-number">16.</span> Є позначка схвалення керівником</div>
+                                </div>
+                                <div class="checklist-item" onclick="toggleChecklistItem(this, ${module.id})">
+                                    <div class="checklist-checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                                    <div class="checklist-text"><span class="checklist-number">19.</span> Схвалення зафіксовано (хто, коли)</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="checklist-footer">
+                            <div class="checklist-status">
+                                Перевірено: <strong id="checklist-status-${module.id}">0 з 23 пунктів</strong>
+                            </div>
+                            <button class="checklist-reset-btn" onclick="resetChecklist(${module.id})">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="23 4 23 10 17 10"/>
+                                    <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/>
+                                </svg>
+                                Скинути
+                            </button>
+                        </div>
+                    </div>
+                `;
+            }
+            
             // Questions section
             let questionsHTML = `
                 <div class="questions-section">
@@ -3389,7 +4562,103 @@
             
             questionsHTML += '</div>';
             
-            lessonContent.innerHTML = accordionHTML + diagramHTML + downloadHTML + templateHTML + questionsHTML;
+            lessonContent.innerHTML = accordionHTML + diagramHTML + downloadHTML + templateHTML + checklistHTML + questionsHTML;
+            
+            // Restore checklist state if exists
+            if (module.hasChecklist) {
+                setTimeout(() => restoreChecklistState(module.id), 100);
+            }
+            
+            // Update homework textarea with all answers
+            updateHomeworkFromAnswers();
+            
+        } else if (module.type === 'practice') {
+            // Practice module with steps
+            let stepsHTML = '<div class="practice-steps">';
+            module.practiceSteps.forEach((step, index) => {
+                let stepClass = '';
+                let stepNumber = index + 1;
+                
+                if (step.title.includes('Мета') || step.title.includes('Що ви отримаєте')) {
+                    stepClass = 'intro';
+                    stepNumber = '★';
+                } else if (step.title.includes('Результат')) {
+                    stepClass = 'result';
+                    stepNumber = '✓';
+                }
+                
+                stepsHTML += `
+                    <div class="practice-step ${stepClass} ${index === 0 ? 'open' : ''}">
+                        <div class="practice-step-header" onclick="togglePracticeStep(this)">
+                            <div class="practice-step-number">${stepNumber}</div>
+                            <span class="practice-step-title">${step.title}</span>
+                            <svg class="practice-step-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"/>
+                            </svg>
+                        </div>
+                        <div class="practice-step-content">
+                            <div class="practice-step-body">${step.content}</div>
+                        </div>
+                    </div>
+                `;
+            });
+            stepsHTML += '</div>';
+            
+            // Practice download section
+            let downloadHTML = '';
+            if (module.practiceDownload) {
+                downloadHTML = `
+                    <div class="practice-download">
+                        <svg class="practice-download-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="3" width="18" height="18" rx="2"/>
+                            <line x1="3" y1="9" x2="21" y2="9"/>
+                            <line x1="9" y1="21" x2="9" y2="9"/>
+                        </svg>
+                        <div class="practice-download-title">${module.practiceDownload.title}</div>
+                        <div class="practice-download-desc">${module.practiceDownload.description}</div>
+                        <a href="${module.practiceDownload.url}" target="_blank" class="practice-download-btn">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                                <polyline points="15 3 21 3 21 9"/>
+                                <line x1="10" y1="14" x2="21" y2="3"/>
+                            </svg>
+                            Відкрити шаблон в Google Таблицях
+                        </a>
+                        <div class="practice-download-note">Натисніть "Файл" → "Зробити копію" щоб зберегти у свій Drive</div>
+                    </div>
+                `;
+            }
+            
+            // Questions section
+            let questionsHTML = `
+                <div class="questions-section">
+                    <div class="questions-title">
+                        <svg class="icon icon-sm"><use href="#icon-alert"/></svg>
+                        Питання після виконання завдання
+                    </div>
+            `;
+            
+            module.questions.forEach((q, index) => {
+                const savedAnswer = module.answers ? module.answers[q.id] || '' : '';
+                questionsHTML += `
+                    <div class="question-item">
+                        <div class="question-label">
+                            <span class="question-number">${index + 1}.</span>
+                            <span>${q.question}</span>
+                        </div>
+                        <textarea 
+                            class="question-textarea" 
+                            data-question-id="${q.id}"
+                            placeholder="${q.placeholder}"
+                            onchange="saveQuestionAnswer(${q.id}, this.value)"
+                        >${savedAnswer}</textarea>
+                    </div>
+                `;
+            });
+            
+            questionsHTML += '</div>';
+            
+            lessonContent.innerHTML = stepsHTML + downloadHTML + questionsHTML;
             
             // Update homework textarea with all answers
             updateHomeworkFromAnswers();
@@ -3445,6 +4714,11 @@
         item.classList.toggle('open');
     }
 
+    window.togglePracticeStep = function(header) {
+        const step = header.parentElement;
+        step.classList.toggle('open');
+    }
+
     window.saveQuestionAnswer = function(questionId, value) {
         if (!currentModule) return;
         
@@ -3476,6 +4750,68 @@
         currentModule.homeworkText = allAnswers.trim();
         
         updateHomeworkStatus();
+    }
+
+    // Checklist functions
+    window.toggleChecklistItem = function(item, moduleId) {
+        item.classList.toggle('checked');
+        updateChecklistCount(moduleId);
+        saveChecklistState(moduleId);
+    }
+
+    window.resetChecklist = function(moduleId) {
+        const section = document.querySelector('.checklist-section');
+        if (!section) return;
+        
+        section.querySelectorAll('.checklist-item').forEach(item => {
+            item.classList.remove('checked');
+        });
+        
+        updateChecklistCount(moduleId);
+        saveChecklistState(moduleId);
+    }
+
+    function updateChecklistCount(moduleId) {
+        const section = document.querySelector('.checklist-section');
+        if (!section) return;
+        
+        const total = section.querySelectorAll('.checklist-item').length;
+        const checked = section.querySelectorAll('.checklist-item.checked').length;
+        
+        const countEl = document.getElementById(`checklist-count-${moduleId}`);
+        const statusEl = document.getElementById(`checklist-status-${moduleId}`);
+        
+        if (countEl) countEl.textContent = checked;
+        if (statusEl) statusEl.textContent = `${checked} з ${total} пунктів`;
+    }
+
+    function saveChecklistState(moduleId) {
+        const section = document.querySelector('.checklist-section');
+        if (!section || !currentModule) return;
+        
+        const checkedItems = [];
+        section.querySelectorAll('.checklist-item').forEach((item, index) => {
+            if (item.classList.contains('checked')) {
+                checkedItems.push(index);
+            }
+        });
+        
+        currentModule.checklistState = checkedItems;
+        debouncedSave();
+    }
+
+    function restoreChecklistState(moduleId) {
+        const section = document.querySelector('.checklist-section');
+        if (!section || !currentModule || !currentModule.checklistState) return;
+        
+        const items = section.querySelectorAll('.checklist-item');
+        currentModule.checklistState.forEach(index => {
+            if (items[index]) {
+                items[index].classList.add('checked');
+            }
+        });
+        
+        updateChecklistCount(moduleId);
     }
 
     window.showDashboard = function() {
