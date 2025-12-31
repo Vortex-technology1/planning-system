@@ -919,6 +919,131 @@
         .module-card:nth-child(9) { animation-delay: 0.18s; }
         .module-card:nth-child(10) { animation-delay: 0.2s; }
 
+        /* ===== ACCORDION ARTICLE ===== */
+        .article-accordion {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .accordion-item {
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            background: var(--bg-primary);
+        }
+
+        .accordion-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 1.25rem;
+            background: var(--bg-secondary);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            gap: 1rem;
+        }
+
+        .accordion-header:hover {
+            background: var(--bg-accent);
+        }
+
+        .accordion-title {
+            font-size: 0.938rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            flex: 1;
+        }
+
+        .accordion-icon {
+            width: 24px;
+            height: 24px;
+            color: var(--text-muted);
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .accordion-item.open .accordion-icon {
+            transform: rotate(180deg);
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .accordion-item.open .accordion-content {
+            max-height: 2000px;
+        }
+
+        .accordion-body {
+            padding: 1.25rem;
+            font-size: 0.938rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            white-space: pre-line;
+            border-top: 1px solid var(--border-light);
+        }
+
+        .accordion-body strong {
+            color: var(--text-primary);
+        }
+
+        /* ===== QUESTIONS SECTION ===== */
+        .questions-section {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 2px solid var(--border);
+        }
+
+        .questions-title {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .question-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .question-label {
+            font-size: 0.938rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .question-number {
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        .question-textarea {
+            width: 100%;
+            min-height: 100px;
+            padding: 1rem;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            font-family: inherit;
+            font-size: 0.938rem;
+            line-height: 1.5;
+            resize: vertical;
+            transition: all 0.2s ease;
+        }
+
+        .question-textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.1);
+        }
+
         /* ===== FLOATING SUPPORT BUTTON ===== */
         .support-button {
             position: fixed;
@@ -1163,18 +1288,11 @@
                 </div>
                 
                 <div class="onboarding-note">
-                    <p><strong>Важливо:</strong> кожен модуль — це крок алгоритму. Результат попереднього модуля використовується в наступному. Так крок за кроком ви будуєте повну систему планування.</p>
-                </div>
-                
-                <div class="onboarding-links">
-                    <a href="#" target="_blank" class="onboarding-link" id="folder-link">
-                        <svg class="icon icon-sm"><use href="#icon-folder"/></svg>
-                        Робоча папка курсу
-                    </a>
-                    <a href="#" target="_blank" class="onboarding-link" id="video-link">
-                        <svg class="icon icon-sm"><use href="#icon-play"/></svg>
-                        Відео-інструкція
-                    </a>
+                    <p><strong>Курс відповідає на практичні управлінські питання:</strong></p>
+                    <p>– Чому без письмового плану співробітник завжди «зайнятий», але без результату?</p>
+                    <p>– Як перетворити тижневий план у інструмент контролю, а не формальність?</p>
+                    <p>– Як планувати роботу, якщо одна людина виконує 2–3 ролі?</p>
+                    <p>– Як по плану прогнозувати результат, а не просто фіксувати завдання?</p>
                 </div>
             </div>
 
@@ -1308,15 +1426,211 @@
     const courseData = [
         {
             id: 1,
-            title: "ВСТУП ДО ПЛАНУВАННЯ",
-            subtitle: "Основи системного підходу",
-            problem: "Ви постійно зайняті, але результати не відповідають витраченому часу. Справи накопичуються, дедлайни горять, а відчуття контролю над життям зникає.",
-            achievement: "Розуміння базових принципів планування та чому більшість систем не працюють. Фундамент для побудови власної системи.",
-            homework: "Опишіть AI-асистенту вашу поточну ситуацію з плануванням: що працює, що ні, які основні проблеми.",
-            homeworkLink: "#",
-            homeworkLinkName: "AI Асистент планування",
-            result: "Аналіз вашої поточної системи планування",
-            time: 20
+            title: "ФІЛОСОФІЯ ПЛАНУВАННЯ",
+            subtitle: "Чому планування — це не опція, а умова виживання",
+            type: "article",
+            articleSections: [
+                {
+                    title: "1. Планування — це не про «хочу», а про матеріальний результат",
+                    content: `У TALKO System планування не починається зі слів «мені б хотілося».
+Воно починається з питання:
+
+<strong>Який матеріальний результат має з'явитися в реальному світі?</strong>
+
+Будь-яка реальна ціль завжди має матеріальну складову:
+• навчання гри на фортепіано → регулярна фізична взаємодія з інструментом
+• розвиток експертності → кейси, гроші, репутація, запити від ринку
+• бізнес → прибуток, процеси, клієнти, персонал
+
+Ми живемо у матеріальному світі, тому нематеріальні цілі без матеріального прояву — це не цілі, а фантазії.
+
+Гроші, статус, визнання, результати — не є чимось «поганим».
+Це індикатори того, що ваша діяльність створює цінність.`
+                },
+                {
+                    title: "2. Чому планування — це не опція, а умова виживання",
+                    content: `У сучасному світі цінними вважаються ті, хто:
+• стабільно досягає результатів
+• здатний прогнозувати наслідки своїх дій
+• може впливати на реальність, а не просто реагувати
+
+Людина або компанія без цілей і плану:
+• не керує майбутнім
+• живе в режимі реакції
+• постійно відчуває втрату контролю
+
+<strong>Відсутність планування = відсутність керування життям і бізнесом.</strong>`
+                },
+                {
+                    title: "3. Світ чинить опір будь-яким цілям. Це нормально.",
+                    content: `Коли ви ставите реальну ціль:
+• побудувати будинок
+• запустити бізнес
+• навести порядок у компанії
+
+...ви неминуче зіштовхуєтесь з опором:
+• «пішли на шашлики»
+• «давай подивимось фільм»
+• «зараз не на часі»
+• «давай потім»
+
+Це не змова. <strong>Це інертність матерії.</strong>
+
+Світ прагне залишатися таким, яким він є.
+Будь-яка зміна вимагає енергії, уваги та структури.`
+                },
+                {
+                    title: "4. Планування — це спосіб протистояти інертності світу",
+                    content: `Планування — це фіксація вашого наміру у формі конкретних дій та результатів.
+
+<strong>Ключове питання TALKO System:</strong>
+
+Який цінний кінцевий продукт (ЦКП) має з'явитися після цієї дії?
+• Навіщо ця зустріч?
+• Який результат документа?
+• Навіщо ми впроваджуємо інструмент управління?
+• Який вимірюваний результат має з'явитися?
+
+Без відповіді на це питання будь-яка діяльність перетворюється на імітацію роботи.`
+                },
+                {
+                    title: "5. Візуалізація працює, але не сама по собі",
+                    content: `Візуалізація — не магія.
+Вона працює лише тому, що утримує увагу на цілі.
+
+Коли увага стабільно утримується:
+• світ менше відволікає
+• випадкові стимули слабшають
+• з'являється послідовність дій
+
+Але в TALKO System візуалізація — це допоміжний інструмент, а не заміна плану.
+
+<strong>Без плану візуалізація — це мрія.
+З планом — це підсилювач дій.</strong>`
+                },
+                {
+                    title: "6. Що відбувається зі співробітниками",
+                    content: `У більшості співробітників:
+• немає чітких особистих цілей
+• немає навички дивитися в майбутнє
+• немає досвіду досягнення результатів через план
+
+Тому:
+• вони легко відволікаються
+• їм складно формулювати плани
+• вони чинять пасивний опір плануванню
+
+<strong>І це нормальний середньостатистичний стан людини, а не її «поганість».</strong>`
+                },
+                {
+                    title: "7. Соціальні цілі ≠ реальні цілі",
+                    content: `Багато людей декларують:
+• «хочу бути підприємцем»
+• «хочу бути спортивним»
+• «хочу розвиватись»
+
+Але реальну ціль видно не зі слів, а з:
+• того, куди людина витрачає вільний час
+• того, куди йдуть вільні гроші
+• того, куди спрямована енергія без зовнішнього тиску
+
+<strong>У більшості людей цілей немає. Є лише реакція на обставини.</strong>`
+                },
+                {
+                    title: "8. Чому люди бояться планування",
+                    content: `Планування змушує дивитися в майбутнє.
+А майбутнє для багатьох — це:
+• невиконані обіцянки
+• зірвані плани
+• накопичений негативний досвід
+
+Тому при вимозі «сплануй тиждень» людина може:
+• різко втратити настрій
+• почати саботувати
+• казати «це неможливо»
+• демонструвати навіть фізичний дискомфорт
+
+<strong>Це не лінь. Це страх.</strong>`
+                },
+                {
+                    title: "9. Планування як тренування",
+                    content: `Планування — це навик, а не талант.
+
+Його розвиток схожий на подолання:
+• страху висоти
+• страху глибини
+• страху води
+
+Принцип один: <strong>наблизився → відступив → знову наблизився</strong>
+
+Тиждень — це вже «висота» для багатьох людей.
+Тому впровадження має бути системним і контрольованим.`
+                },
+                {
+                    title: "10. Контроль не можна прибирати",
+                    content: `Одна з ключових помилок керівників:
+<strong>«Навчу планувати — і вони будуть робити самі»</strong>
+
+Ні. Не будуть.
+
+Якщо контроль зникає:
+• планування зникає
+• відповідальність зникає
+• система деградує
+
+<strong>У TALKO System планування завжди пов'язане з перевіркою.</strong>`
+                },
+                {
+                    title: "11. Планування і стан причини",
+                    content: `У світі є два стани:
+• <strong>стан причини</strong> — я впливаю і отримую результат
+• <strong>стан наслідку</strong> — на мене впливають і я розгрібаю
+
+Планування — це інструмент переведення:
+• керівника → у стан причини
+• співробітника → у стан відповідальності
+
+<strong>Без планування людина завжди залишається наслідком.</strong>`
+                },
+                {
+                    title: "12. Висновок",
+                    content: `<strong>Планування — це не:</strong>
+• заповнення календаря
+• список справ
+• формальність
+
+<strong>Планування — це:</strong>
+• фіксація майбутнього результату
+• спосіб утримання уваги
+• інструмент управління людьми
+• механізм виходу з хаосу
+
+Саме тому в TALKO System планування:
+• має чітку форму
+• має перевірку
+• має контроль
+• має наслідки`
+                }
+            ],
+            questions: [
+                {
+                    id: 1,
+                    question: "Яка різниця між «соціальною ціллю» і «реальною ціллю»? Наведіть приклад з вашого бізнесу або життя.",
+                    placeholder: "Опишіть приклад, коли ви або ваш співробітник декларували одну ціль, але реальні дії показували іншу..."
+                },
+                {
+                    id: 2,
+                    question: "Чому контроль планування не можна прибирати навіть після того, як співробітник «навчився» планувати?",
+                    placeholder: "Опишіть своїми словами, що відбувається коли контроль зникає..."
+                },
+                {
+                    id: 3,
+                    question: "Який матеріальний результат (ЦКП) ви хочете отримати від проходження цього курсу?",
+                    placeholder: "Сформулюйте конкретний вимірюваний результат, який має з'явитися після курсу..."
+                }
+            ],
+            result: "Відповіді на 3 питання для закріплення матеріалу",
+            time: 25
         },
         {
             id: 2,
@@ -1508,6 +1822,7 @@
                             module.completed = savedModule.completed || false;
                             module.homeworkText = savedModule.homeworkText || '';
                             module.completedAt = savedModule.completedAt || null;
+                            module.answers = savedModule.answers || {};
                         }
                     });
                 }
@@ -1537,7 +1852,8 @@
                     id: m.id,
                     completed: m.completed || false,
                     homeworkText: m.homeworkText || '',
-                    completedAt: m.completedAt || null
+                    completedAt: m.completedAt || null,
+                    answers: m.answers || {}
                 })),
                 lastUpdated: firebase.firestore.FieldValue.serverTimestamp()
             };
@@ -1625,60 +1941,146 @@
         document.getElementById('lesson-status-text').textContent = module.completed ? 'Завершено' : 'Доступний';
         
         document.getElementById('result-text').textContent = module.result;
-        document.getElementById('homework-textarea').value = module.homeworkText || '';
         
-        updateHomeworkStatus();
-        
-        // Build lesson content
+        // Build lesson content based on type
         const lessonContent = document.getElementById('lesson-content');
         
-        let additionalContent = '';
-        if (module.videoLink && module.videoLinkName) {
-            additionalContent = `
-                <a href="${module.videoLink}" target="_blank" class="homework-link video-link">
-                    <svg class="icon icon-sm"><use href="#icon-play"/></svg>
-                    ${module.videoLinkName}
-                    <svg class="icon icon-xs"><use href="#icon-external"/></svg>
-                </a>
+        if (module.type === 'article') {
+            // Article with accordion
+            let accordionHTML = '<div class="article-accordion">';
+            module.articleSections.forEach((section, index) => {
+                accordionHTML += `
+                    <div class="accordion-item ${index === 0 ? 'open' : ''}">
+                        <div class="accordion-header" onclick="toggleAccordion(this)">
+                            <span class="accordion-title">${section.title}</span>
+                            <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"/>
+                            </svg>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="accordion-body">${section.content}</div>
+                        </div>
+                    </div>
+                `;
+            });
+            accordionHTML += '</div>';
+            
+            // Questions section
+            let questionsHTML = `
+                <div class="questions-section">
+                    <div class="questions-title">
+                        <svg class="icon icon-sm"><use href="#icon-alert"/></svg>
+                        Питання для закріплення матеріалу
+                    </div>
             `;
+            
+            module.questions.forEach((q, index) => {
+                const savedAnswer = module.answers ? module.answers[q.id] || '' : '';
+                questionsHTML += `
+                    <div class="question-item">
+                        <div class="question-label">
+                            <span class="question-number">${index + 1}.</span>
+                            <span>${q.question}</span>
+                        </div>
+                        <textarea 
+                            class="question-textarea" 
+                            data-question-id="${q.id}"
+                            placeholder="${q.placeholder}"
+                            onchange="saveQuestionAnswer(${q.id}, this.value)"
+                        >${savedAnswer}</textarea>
+                    </div>
+                `;
+            });
+            
+            questionsHTML += '</div>';
+            
+            lessonContent.innerHTML = accordionHTML + questionsHTML;
+            
+            // Update homework textarea with all answers
+            updateHomeworkFromAnswers();
+            
+        } else {
+            // Standard module with problem/achievement/homework
+            let additionalContent = '';
+            
+            lessonContent.innerHTML = `
+                <div class="lesson-section">
+                    <span class="section-label problem">
+                        <svg class="icon icon-xs"><use href="#icon-alert"/></svg>
+                        ПРОБЛЕМА
+                    </span>
+                    <p class="section-content">${module.problem}</p>
+                </div>
+                
+                <div class="lesson-section">
+                    <span class="section-label achievement">
+                        <svg class="icon icon-xs"><use href="#icon-target"/></svg>
+                        ЩО ОТРИМАЄТЕ
+                    </span>
+                    <p class="section-content">${module.achievement}</p>
+                </div>
+                
+                <div class="lesson-section">
+                    <span class="section-label homework">
+                        <svg class="icon icon-xs"><use href="#icon-book"/></svg>
+                        ЗАВДАННЯ
+                    </span>
+                    <p class="section-content">${module.homework}</p>
+                    <a href="${module.homeworkLink}" target="_blank" class="homework-link">
+                        <svg class="icon icon-sm"><use href="#icon-external"/></svg>
+                        ${module.homeworkLinkName}
+                    </a>
+                </div>
+            `;
+            
+            document.getElementById('homework-textarea').value = module.homeworkText || '';
         }
         
-        lessonContent.innerHTML = `
-            <div class="lesson-section">
-                <span class="section-label problem">
-                    <svg class="icon icon-xs"><use href="#icon-alert"/></svg>
-                    ПРОБЛЕМА
-                </span>
-                <p class="section-content">${module.problem}</p>
-            </div>
-            
-            <div class="lesson-section">
-                <span class="section-label achievement">
-                    <svg class="icon icon-xs"><use href="#icon-target"/></svg>
-                    ЩО ОТРИМАЄТЕ
-                </span>
-                <p class="section-content">${module.achievement}</p>
-                ${additionalContent}
-            </div>
-            
-            <div class="lesson-section">
-                <span class="section-label homework">
-                    <svg class="icon icon-xs"><use href="#icon-book"/></svg>
-                    ЗАВДАННЯ
-                </span>
-                <p class="section-content">${module.homework}</p>
-                <a href="${module.homeworkLink}" target="_blank" class="homework-link">
-                    <svg class="icon icon-sm"><use href="#icon-external"/></svg>
-                    ${module.homeworkLinkName}
-                </a>
-            </div>
-        `;
+        updateHomeworkStatus();
         
         // Show detail view
         document.getElementById('dashboard').classList.add('hidden');
         document.getElementById('module-detail').classList.add('active');
         
         window.scrollTo(0, 0);
+    }
+
+    window.toggleAccordion = function(header) {
+        const item = header.parentElement;
+        item.classList.toggle('open');
+    }
+
+    window.saveQuestionAnswer = function(questionId, value) {
+        if (!currentModule) return;
+        
+        if (!currentModule.answers) {
+            currentModule.answers = {};
+        }
+        currentModule.answers[questionId] = value;
+        
+        updateHomeworkFromAnswers();
+        debouncedSave();
+    }
+
+    function updateHomeworkFromAnswers() {
+        if (!currentModule || currentModule.type !== 'article') return;
+        
+        const textarea = document.getElementById('homework-textarea');
+        let allAnswers = '';
+        
+        if (currentModule.answers && currentModule.questions) {
+            currentModule.questions.forEach((q, index) => {
+                const answer = currentModule.answers[q.id] || '';
+                if (answer.trim()) {
+                    allAnswers += `${index + 1}. ${q.question}\n${answer}\n\n`;
+                }
+            });
+        }
+        
+        textarea.value = allAnswers.trim();
+        currentModule.homeworkText = allAnswers.trim();
+        
+        updateHomeworkStatus();
     }
 
     window.showDashboard = function() {
