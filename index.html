@@ -13,6 +13,7 @@
             --primary: #22c55e;
             --primary-dark: #16a34a;
             --primary-light: #86efac;
+            --primary-bg: #f0fdf4;
             --red: #ef4444;
             --red-dark: #dc2626;
             --blue: #3b82f6;
@@ -2244,6 +2245,279 @@
                 display: none;
             }
         }
+
+        /* ===== NEW DASHBOARD STYLES ===== */
+        .how-to-learn {
+            background: var(--bg-primary);
+            border-radius: var(--radius-lg);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .how-to-learn-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .how-to-learn-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--primary-bg);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .how-to-learn-icon svg {
+            width: 24px;
+            height: 24px;
+            color: var(--primary);
+        }
+
+        .htl-title {
+            font-size: 1.125rem;
+            font-weight: 700;
+        }
+
+        .htl-subtitle {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .step-card {
+            background: var(--bg-secondary);
+            border-radius: var(--radius-md);
+            padding: 1rem;
+        }
+
+        .step-num {
+            width: 28px;
+            height: 28px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        .step-card .step-title {
+            font-size: 0.938rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .step-card .step-desc {
+            font-size: 0.813rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        .important-note {
+            background: #fef3c7;
+            border-radius: var(--radius-md);
+            padding: 1rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .important-note svg {
+            width: 20px;
+            height: 20px;
+            color: #f97316;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .important-note p {
+            font-size: 0.875rem;
+            color: var(--text-primary);
+            margin: 0;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+
+        .action-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.625rem 1rem;
+            border-radius: var(--radius-md);
+            font-size: 0.875rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .action-btn svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        .action-btn.green {
+            background: var(--primary);
+            color: white;
+        }
+
+        .action-btn.green:hover {
+            background: var(--primary-dark);
+        }
+
+        .action-btn.red {
+            background: #ef4444;
+            color: white;
+        }
+
+        .action-btn.red:hover {
+            background: #dc2626;
+        }
+
+        .action-btn.blue {
+            background: #3b82f6;
+            color: white;
+        }
+
+        .action-btn.blue:hover {
+            background: #2563eb;
+        }
+
+        .stats-section {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .stat-card {
+            background: var(--bg-primary);
+            border-radius: var(--radius-lg);
+            padding: 1.25rem;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .stat-icon-svg {
+            width: 32px;
+            height: 32px;
+            margin: 0 auto 0.5rem;
+            color: var(--primary);
+        }
+
+        .stat-card .stat-value {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.25rem;
+        }
+
+        .stat-card .stat-label {
+            font-size: 0.813rem;
+            color: var(--text-secondary);
+        }
+
+        .progress-section {
+            background: var(--bg-primary);
+            border-radius: var(--radius-lg);
+            padding: 1rem 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .progress-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .progress-label {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+        }
+
+        .progress-value {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .progress-bar {
+            height: 8px;
+            background: var(--border-light);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--primary-dark) 100%);
+            border-radius: 4px;
+            transition: width 0.5s ease;
+        }
+
+        .modules-section {
+            background: var(--bg-primary);
+            border-radius: var(--radius-lg);
+            padding: 1.5rem;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .modules-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .modules-header svg {
+            width: 20px;
+            height: 20px;
+            color: var(--text-secondary);
+        }
+
+        .modules-title {
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .steps-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-section {
+                grid-template-columns: 1fr;
+            }
+
+            .action-buttons {
+                flex-direction: column;
+            }
+
+            .action-btn {
+                justify-content: center;
+            }
+        }
     </style>
 </head>
 <body>
@@ -2406,81 +2680,138 @@
 
         <!-- Dashboard -->
         <div id="dashboard" class="dashboard">
-            <!-- Onboarding -->
-            <div class="onboarding-section">
-                <div class="onboarding-header">
-                    <h2 class="onboarding-title">Як проходити навчання</h2>
-                    <p class="onboarding-subtitle">3 простих кроки до результату</p>
-                </div>
-                
-                <div class="onboarding-steps">
-                    <div class="onboarding-step">
-                        <div class="step-number">1</div>
-                        <div class="step-content">
-                            <div class="step-title">Відкрийте модуль</div>
-                            <div class="step-desc">Читайте матеріал та переходьте за посиланням на AI-асистента</div>
-                        </div>
+            <!-- How to learn section -->
+            <div class="how-to-learn">
+                <div class="how-to-learn-header">
+                    <div class="how-to-learn-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
+                            <line x1="12" y1="17" x2="12.01" y2="17"/>
+                        </svg>
                     </div>
-                    <div class="onboarding-step">
-                        <div class="step-number">2</div>
-                        <div class="step-content">
-                            <div class="step-title">Отримайте результат</div>
-                            <div class="step-desc">AI-асистент створить для вас готовий контент/текст/матеріал</div>
-                        </div>
-                    </div>
-                    <div class="onboarding-step">
-                        <div class="step-number">3</div>
-                        <div class="step-content">
-                            <div class="step-title">Збережіть результат</div>
-                            <div class="step-desc">Вставте результат у поле та завершіть модуль</div>
-                        </div>
+                    <div>
+                        <div class="htl-title">Як проходити навчання</div>
+                        <div class="htl-subtitle">3 простих кроки до результату</div>
                     </div>
                 </div>
-                
-                <div class="onboarding-note">
-                    <p><strong>Курс відповідає на практичні управлінські питання:</strong></p>
-                    <p>– Чому без письмового плану співробітник завжди «зайнятий», але без результату?</p>
-                    <p>– Як перетворити тижневий план у інструмент контролю, а не формальність?</p>
-                    <p>– Як планувати роботу, якщо одна людина виконує 2–3 ролі?</p>
-                    <p>– Як по плану прогнозувати результат, а не просто фіксувати завдання?</p>
+
+                <div class="steps-grid">
+                    <div class="step-card">
+                        <div class="step-num">1</div>
+                        <div class="step-title">Відкрийте модуль</div>
+                        <div class="step-desc">Читайте матеріал та переходьте за посиланнями на AI-асистента</div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-num">2</div>
+                        <div class="step-title">Отримайте результат</div>
+                        <div class="step-desc">AI-асистент створить для вас готовий контент/текст/матеріал</div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-num">3</div>
+                        <div class="step-title">Збережіть та використайте далі</div>
+                        <div class="step-desc">Вставте результат у поле. Цей результат буде вхідними даними для наступного модуля!</div>
+                    </div>
+                </div>
+
+                <div class="important-note">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <line x1="12" y1="8" x2="12" y2="12"/>
+                        <line x1="12" y1="16" x2="12.01" y2="16"/>
+                    </svg>
+                    <p><strong>Важливо:</strong> кожен модуль — це крок алгоритму. Результат попереднього модуля вставляєте в наступного AI-асистента. Так крок за кроком ви будуєте повну систему планування та координації.</p>
+                </div>
+
+                <div class="action-buttons">
+                    <a href="#" class="action-btn green" target="_blank">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/>
+                        </svg>
+                        Робоча папка курсу
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                            <polyline points="15 3 21 3 21 9"/>
+                            <line x1="10" y1="14" x2="21" y2="3"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="action-btn red" target="_blank">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polygon points="5 3 19 12 5 21 5 3"/>
+                        </svg>
+                        Відео-інструкція
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                            <polyline points="15 3 21 3 21 9"/>
+                            <line x1="10" y1="14" x2="21" y2="3"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="action-btn blue" target="_blank">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
+                            <line x1="12" y1="17" x2="12.01" y2="17"/>
+                        </svg>
+                        AI Підтримка курсу
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                            <polyline points="15 3 21 3 21 9"/>
+                            <line x1="10" y1="14" x2="21" y2="3"/>
+                        </svg>
+                    </a>
                 </div>
             </div>
 
             <!-- Stats -->
             <div class="stats-section">
                 <div class="stat-card">
-                    <div class="stat-icon">
-                        <svg class="icon icon-md"><use href="#icon-chart"/></svg>
-                    </div>
-                    <div class="stat-content">
-                        <div class="stat-value" id="progress-percent">0%</div>
-                        <div class="stat-label">Прогрес</div>
-                    </div>
+                    <svg class="stat-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="12" y1="20" x2="12" y2="10"/>
+                        <line x1="18" y1="20" x2="18" y2="4"/>
+                        <line x1="6" y1="20" x2="6" y2="16"/>
+                    </svg>
+                    <div class="stat-value" id="progress-percent">0%</div>
+                    <div class="stat-label">Прогрес</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-icon">
-                        <svg class="icon icon-md"><use href="#icon-check-circle"/></svg>
-                    </div>
-                    <div class="stat-content">
-                        <div class="stat-value" id="completed-count">0/0</div>
-                        <div class="stat-label">Завершено</div>
-                    </div>
+                    <svg class="stat-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                        <polyline points="22 4 12 14.01 9 11.01"/>
+                    </svg>
+                    <div class="stat-value" id="completed-count">0/19</div>
+                    <div class="stat-label">Завершено</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-icon">
-                        <svg class="icon icon-md"><use href="#icon-clock"/></svg>
-                    </div>
-                    <div class="stat-content">
-                        <div class="stat-value" id="total-time">0</div>
-                        <div class="stat-label">Хвилин</div>
-                    </div>
+                    <svg class="stat-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <polyline points="12 6 12 12 16 14"/>
+                    </svg>
+                    <div class="stat-value" id="total-time">0</div>
+                    <div class="stat-label">хвилин</div>
+                </div>
+            </div>
+
+            <!-- Progress bar -->
+            <div class="progress-section">
+                <div class="progress-header">
+                    <span class="progress-label">Загальний прогрес</span>
+                    <span class="progress-value" id="progress-bar-value">0%</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill" style="width: 0%"></div>
                 </div>
             </div>
 
             <!-- Modules -->
             <div class="modules-section">
-                <div class="section-header">
-                    <h2 class="section-title">Модулі курсу</h2>
+                <div class="modules-header">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="7" height="7"/>
+                        <rect x="14" y="3" width="7" height="7"/>
+                        <rect x="14" y="14" width="7" height="7"/>
+                        <rect x="3" y="14" width="7" height="7"/>
+                    </svg>
+                    <span class="modules-title">Модулі курсу</span>
                 </div>
                 <div class="modules-grid" id="modules-grid">
                     <!-- Modules will be rendered here -->
@@ -5745,6 +6076,1524 @@
             ],
             result: "Розуміння п'яти складових успішної координації",
             time: 30
+        },
+        {
+            id: 15,
+            title: "РЕКОМЕНДАЦІЙНА РАДА",
+            subtitle: "Як проводити наради, щоб це було швидко, без сварок і з результатом",
+            type: "article",
+            articleSections: [
+                {
+                    title: "Коли вам вже потрібні ради (а не «переговоримо в чаті»)",
+                    content: `<strong>Є умовні "рівні болю" бізнесу.</strong>
+
+<strong>Рівень 1: 3–7 людей</strong>
+Все тримається на власнику.
+Питання вирішуються голосом/чатом.
+
+<strong>Рівень 2: 8–20 людей</strong>
+З'являються керівники напрямів.
+Починаються збої "між відділами":
+• продажі пообіцяли — виробництво не готове
+• маркетинг дав акцію — адміністратори не в курсі
+• HR не закрив вакансію — падає реклама/продажі
+
+<strong>Рівень 3: 20–60+ людей</strong>
+Тут уже "пішло-поїхало".
+Без системи координацій:
+• з'являються регулярні пожежі
+• наради стають довгі, нервові, без рішень
+• кожен "правий", але компанія стоїть
+
+<strong>Ось тут вам потрібні ради.</strong>
+І головне: на кожній раді має бути голова.`
+                },
+                {
+                    title: "Головна правда про будь-яку нараду",
+                    content: `<strong>Нарада = група людей.</strong>
+
+А група людей без керування робить три речі:
+• відволікається
+• сперечається
+• говорить довго, а рішення не робить
+
+<strong>Тому правило №1:</strong>
+
+<span style="color:#dc2626">Якщо ви зібрали людей і не призначили голову + продукт зустрічі — ви вже зробили помилку.</span>`
+                },
+                {
+                    title: "Що таке Рекомендаційна рада (дуже просто)",
+                    content: `<strong>Рекомендаційна рада — це щотижнева зустріч керівників відділень/напрямів, які:</strong>
+
+• знаходяться на одному рівні
+• не підпорядковуються один одному
+• але залежать один від одного
+
+<strong>Для чого вона існує:</strong>
+
+Щоб керівники:
+• показали свої статистики
+• узгодили свої тижневі плани
+• домовились: хто кому що робить цього тижня
+• знайшли "вузьке місце", яке тягне компанію вниз
+
+<strong>Що НЕ є метою:</strong>
+
+Це не контроль "хто поганий".
+Контроль робить безпосередній керівник у "Раді з управління".
+
+<strong>Рекомендаційна рада — це узгодження між рівними, щоб не було розривів.</strong>`
+                },
+                {
+                    title: "Чому Рекомендаційна рада «вирощує керівників»",
+                    content: `<strong>Тому що керівник перестає мислити "мій відділ" і починає мислити "вся компанія".</strong>
+
+Він бачить:
+
+<span style="color:#16a34a">✓</span> як його статистика впливає на дохід
+
+<span style="color:#16a34a">✓</span> як інші статистики впливають на нього
+
+<span style="color:#16a34a">✓</span> де вузьке місце не в нього, але ламає всіх`
+                },
+                {
+                    title: "Хто такий Голова Ради і навіщо він потрібен",
+                    content: `<strong>Уяви дві ситуації:</strong>
+
+<span style="color:#dc2626"><strong>Ситуація А (без голови):</strong></span>
+"Зберіться в середу на годину, обговоріть брендбук".
+Далі відбувається:
+• 20 хв сперечаються "як має виглядати"
+• 15 хв згадують, що не принесли матеріали
+• 10 хв обговорюють не те
+• виходять без рішення
+• повторюють через тиждень
+
+<span style="color:#16a34a"><strong>Ситуація Б (є голова):</strong></span>
+Голова каже:
+• продукт зустрічі: "Версія 1 брендбуку"
+• хто приніс матеріали: "Піар — референси, маркетинг — позиціонування"
+• таймінг: "10 хв на рішення"
+• протокол: "фіксуємо рішення і хто доробляє"
+
+Виходять з результатом.
+
+<strong>Різниця — голова.</strong>`
+                },
+                {
+                    title: "Як обирається голова",
+                    content: `<strong>Простими словами:</strong>
+
+1. Члени ради пропонують кандидата
+
+2. Вищий орган (наприклад Виконавча рада) затверджує
+
+3. Якщо голова відсутній — він призначає заміну
+
+<strong>Ключ:</strong>
+
+<em>Голова — це керівник процесу наради, а не начальник людей у житті.</em>`
+                },
+                {
+                    title: "Функція 1: Домогтися підготовки",
+                    content: `<strong>Без підготовки нарада — марна.</strong>
+
+Голова має право сказати:
+
+<em>"Нема плану/статистики — рада переноситься."</em>
+
+Це не "каприз", це економія часу компанії.
+
+<strong>Приклад:</strong>
+КВ2 прийшов без плану просування.
+Без цього неможливо узгодити дії для зростання доходу.
+Отже — перенос.`
+                },
+                {
+                    title: "Функція 2: Тримати порядок і таймінг",
+                    content: `<strong>Голова:</strong>
+
+• дає слово
+• зупиняє відхилення
+• ріже "бла-бла"
+
+<strong>Правило:</strong>
+
+2–3 хвилини на доповідь керівника. Не 10.
+
+Бо якщо 6 керівників по 10 хв — це вже година без рішень.`
+                },
+                {
+                    title: "Функція 3: Домогтися продукту ради",
+                    content: `<strong>Продукт ради = узгоджені дії на тиждень.</strong>
+
+Якщо люди поговорили, але:
+• не записали рішення
+• не призначили відповідального
+• не поставили термін
+
+<span style="color:#dc2626">...то це була не рада, а розмова.</span>`
+                },
+                {
+                    title: "Чому потрібен протокол і чому його веде голова",
+                    content: `<strong>Протокол — це "рейки", щоб нарада не злетіла з дороги.</strong>
+
+Він:
+• тримає порядок
+• фіксує рішення
+• не дає забути обіцянки
+• дозволяє наступного тижня швидко перевірити "що зробили"
+
+<strong>Чому голова веде протокол сам:</strong>
+
+Бо це його список контролю на наступний тиждень:
+• хто що пообіцяв
+• що узгодили
+• що перенесли
+• які питання висять
+
+Якщо протокол веде хтось інший, голова:
+• не відчуває відповідальності
+• не керує реальністю
+• "випадає" з деталей`
+                },
+                {
+                    title: "Що має принести кожен керівник на раду",
+                    content: `<strong>Кожен керівник відділення приходить з 4 речами:</strong>
+
+<span style="color:#16a34a">1.</span> <strong>План минулого тижня</strong> (з відмітками виконання)
+
+<span style="color:#16a34a">2.</span> <strong>План наступного тижня</strong> (вже готовий)
+
+<span style="color:#16a34a">3.</span> <strong>Графік головної статистики</strong> (з вашої системи / Excel / таблиці)
+
+<span style="color:#16a34a">4.</span> <strong>Запити до інших:</strong> що мені потрібно від вас цього тижня
+
+<strong>Це "мінімальний набір", без нього рада не стартує.</strong>`
+                },
+                {
+                    title: "Порядок проведення: Старт + ІЦО",
+                    content: `<strong>Частина 0. Старт (1 хв)</strong>
+
+Голова:
+• називає ціль ради: "узгодити плани і підняти статистики"
+• нагадує правило: "коротко, по процедурі, без відступів"
+• відкриває протокол
+
+<strong>Частина 1. Подивитися ІЦО (5 хв)</strong>
+
+Всі дивляться на ключові статистики компанії.
+
+Ціль:
+• не "аналізувати годину"
+• а побачити: де просіло і що може бути вузьким місцем`
+                },
+                {
+                    title: "Порядок проведення: Огляд + Доповіді",
+                    content: `<strong>Частина 2. Загальний огляд голови (2–3 хв)</strong>
+
+Голова каже:
+• "ось де росте"
+• "ось де падає"
+• "ось вузьке місце"
+• "ось ризик на наступні 1–2 тижні"
+
+<strong>Частина 3. Доповіді керівників по колу (2–3 хв кожен)</strong>
+
+Кожен говорить строго по шаблону:
+
+1. Показую графік головної статистики (росте/падає/стоїть)
+2. Квота на тиждень (яке зростання планую)
+3. Що роблю цього тижня (3–5 ключових задач)
+4. Що мені потрібно від інших (1–2 запити)
+5. Що іншим потрібно від мене (я уточнюю і беру в роботу)
+
+<strong>Голова фіксує в протокол:</strong>
+• хто кому що робить
+• до коли
+• який результат`
+                },
+                {
+                    title: "Порядок проведення: Політики + Завершення",
+                    content: `<strong>Частина 4. Політики (тільки підготовлені)</strong>
+
+Правило жорстке:
+<span style="color:#dc2626">Нема чернетки — не обговорюємо.</span>
+
+Якщо є ідея без документа:
+• голова записує: "принести чернетку наступного тижня"
+• і йдуть далі
+
+<strong>Частина 5. Заохочення / переводи (коротко)</strong>
+• список
+• голосування
+• фіксація
+
+<strong>Частина 6. Завершення (2 хв)</strong>
+
+Голова підсумовує:
+• головні рішення
+• що піде на Виконавчу раду
+• що має бути виконано до наступної зустрічі`
+                },
+                {
+                    title: "Приклад 1: Дохід падає 3 тижні",
+                    content: `<strong>Симптом:</strong>
+статистика доходу вниз
+
+<strong>На раді:</strong>
+дивляться ІЦО: просування впало 2 тижні тому
+причина: вакансія маркетолога відкрита 3 місяці
+
+<strong>Рішення:</strong>
+• КВ1 (HR) бере в план: "закрити вакансію до ___"
+• КВ2/КВ4 узгоджують запуск реклами після виходу
+
+<strong>Продукт:</strong>
+конкретні задачі + відповідальні + терміни`
+                },
+                {
+                    title: "Приклад 2: Виробництво зриває строки",
+                    content: `<strong>Симптом:</strong>
+простій, переробки
+
+<strong>Причина (на раді виявляють):</strong>
+продажі не передали ескіз/ТЗ
+
+<strong>Рішення:</strong>
+• вводять правило: "замовлення без пакету документів не заходить у виробництво"
+• ставлять задачу продажам: "передавати пакет за 24 години"
+
+<strong>Продукт:</strong>
+узгоджена процедура + контроль`
+                },
+                {
+                    title: "Приклад 3: На маркетинг витрати є, заявок мало",
+                    content: `<strong>Симптом:</strong>
+реклама є, але лідів мало
+
+<strong>Причина:</strong>
+не оновлювали офер/лендінг, конверсія впала
+
+<strong>Рішення:</strong>
+• маркетинг бере задачу: "оновити офер/креативи"
+• продажі дають фідбек "які ліди якісні"
+
+<strong>Продукт:</strong>
+план змін + метрика конверсії`
+                },
+                {
+                    title: "Правила дисципліни",
+                    content: `<strong>Щоб рада не стала "болталкою":</strong>
+
+<span style="color:#dc2626">✗</span> Не готовий — перенос
+
+<span style="color:#dc2626">✗</span> Не показав графік — доповідь не прийнята
+
+<span style="color:#dc2626">✗</span> Нема продукту зустрічі — зустріч вважається проваленою
+
+<span style="color:#dc2626">✗</span> Довгі суперечки — виносимо в окрему ситуативну координацію 2–3 людей
+
+<span style="color:#dc2626">✗</span> Рішення без відповідального і терміну — не рішення`
+                },
+                {
+                    title: "Підсумок уроку",
+                    content: `<strong>Рекомендаційна рада — це щотижневий механізм, який:</strong>
+
+<span style="color:#16a34a">✓</span> узгоджує керівників між собою
+
+<span style="color:#16a34a">✓</span> знімає розриви між відділеннями
+
+<span style="color:#16a34a">✓</span> переводить суперечки в цифри і рішення
+
+<span style="color:#16a34a">✓</span> готує дані/рішення для Виконавчої ради
+
+<strong>Голова ради — ключова роль, бо він:</strong>
+
+<span style="color:#16a34a">✓</span> змушує готуватися
+
+<span style="color:#16a34a">✓</span> тримає порядок і час
+
+<span style="color:#16a34a">✓</span> добивається продукту і фіксації`
+                }
+            ],
+            questions: [
+                {
+                    id: 1,
+                    question: "На якому 'рівні болю' зараз ваш бізнес (3-7 людей / 8-20 / 20-60+)? Які 'розриви між відділами' вже відчуваєте?",
+                    placeholder: "Опишіть розмір команди та типові проблеми узгодження..."
+                },
+                {
+                    id: 2,
+                    question: "Хто буде Головою Рекомендаційної ради у вашій компанії? Чому саме ця людина?",
+                    placeholder: "Вкажіть ПІБ/посаду та обґрунтуйте вибір..."
+                },
+                {
+                    id: 3,
+                    question: "З яких 4 речей складатиметься 'мінімальний набір' для ваших керівників на раду? Як ви це забезпечите?",
+                    placeholder: "План минулого тижня, план наступного, графік статистики, запити до інших — як організуєте?"
+                }
+            ],
+            result: "Розуміння Рекомендаційної ради та ролі голови",
+            time: 35
+        },
+        {
+            id: 16,
+            title: "ЕВОЛЮЦІЯ РАДИ",
+            subtitle: "Як Рекомендаційна рада змінюється, коли компанія росте",
+            type: "article",
+            articleSections: [
+                {
+                    title: "Спочатку правда життя: «ідеально» буває не одразу",
+                    content: `<strong>В ідеалі структура така:</strong>
+
+• є директор
+• є заступники
+• є керівники відділень
+• керівники відділень узгоджують плани між собою (Рекомендаційна рада)
+• потім йдуть на затвердження до заступника/директора (Рада з управління)
+• зверху — Виконавча рада (директор + заступники)
+
+<strong>Але в реальності часто так:</strong>
+
+• власник = директор
+• директор = всі заступники
+• і ще директор тягне "одне відділення" руками
+
+Тоді виникає питання:
+
+<em>"Як запускати Рекомендаційну раду, якщо я сам зверху, і я там же?"</em>
+
+Ось для цього і цей урок: як пройти шлях від "неідеально" до "ідеально".`
+                },
+                {
+                    title: "Навіщо тобі взагалі Рекомендаційна рада",
+                    content: `<strong>Бо Рекомендаційна рада робить головне:</strong>
+
+<span style="color:#16a34a"><strong>Вона вирощує керівників</strong></span>
+
+Керівник проходить 2 рівні відповідальності:
+
+<strong>Рівень 1</strong> — "я відповідаю за свій відділ"
+(план, люди, цифри, результат)
+
+<strong>Рівень 2</strong> — "я відповідаю за всю компанію"
+(я бачу інші відділи, розумію зв'язки, і мені не все одно)
+
+Саме Рекомендаційна рада вперше змушує керівників:
+• дивитись на статистики інших
+• узгоджувати плани
+• вимагати одне від одного
+• думати "як це впливає на дохід"
+
+<strong>Тому якщо твоя мета — вийти з операційки, то Рекомендаційна рада тобі потрібна як повітря.</strong>`
+                },
+                {
+                    title: "Головна ідея цього уроку",
+                    content: `<strong>Рекомендаційна рада не "з'являється одразу".</strong>
+
+Вона еволюціонує: спочатку "імітація", потім "напів-рада", потім "справжня".
+
+<strong>Ти робиш не "стрибок", а сходинки.</strong>`
+                },
+                {
+                    title: "Рівень 0: Компанія маленька, ти — все",
+                    content: `<strong>Стан:</strong>
+• власник = директор = заступник = керівник відділення
+• керівників небагато (2–4)
+
+<strong>Проблема:</strong>
+Рекомендаційної ради "між рівними" ще немає, бо ти все одно "головний".
+
+<strong>Що робити (правильний старт):</strong>
+<span style="color:#16a34a">✓</span> Запусти "координацію директора" за протоколом Рекомендаційної ради.
+
+Тобто:
+це по суті Рада з управління, але формат і правила — як у Рекомендаційної ради:
+• статистики показуємо
+• плани приносимо
+• є протокол
+• є запити між відділеннями
+• фіксуємо рішення
+
+<strong>Навіщо так робити:</strong>
+• ти привчаєш керівників до дисципліни
+• вчиш їх процедурі
+• створюєш "звичку узгодження"
+• готуєш ґрунт для справжньої Рекомендаційної ради
+
+<em>Це як тренування перед грою.</em>`
+                },
+                {
+                    title: "Рівень 1: З'явився перший справжній заступник",
+                    content: `<strong>Стан:</strong>
+• у тебе з'явилась людина, яка може бути "верхнім керівником" хоча б частково
+• ти вже не один "центр"
+
+<strong>Ознака, що настав час:</strong>
+• ти вже можеш не брати на себе всі рішення
+• є хоча б 1 керівник, який може вести регулярну раду зверху
+
+<strong>Що міняємо:</strong>
+<span style="color:#16a34a">✓</span> Створюємо Виконавчу раду (навіть маленьку):
+• директор (ти)
+• заступник (новий)
+• (інколи ще 1 ключовий керівник)
+
+<strong>Що дає цей крок:</strong>
+• з'являється "верхній рівень", який може затверджувати рішення
+• тепер можна поступово робити Рекомендаційну раду більш незалежною`
+                },
+                {
+                    title: "Рівень 2: Рекомендаційна рада без директора",
+                    content: `<strong>Стан:</strong>
+• керівників відділень стало більше
+• вони вже можуть домовлятися між собою
+• ти хочеш, щоб вони самі узгоджувалися, а не бігали до тебе з кожним питанням
+
+<strong>Ключова умова:</strong>
+<span style="color:#dc2626">На Рекомендаційній раді не має сидіти директор як "начальник"</span>
+інакше вона автоматично перетворюється на Раду з управління.
+
+<strong>Як це зробити, якщо ти все ще "всередині"?</strong>
+
+Є рішення:
+• ти призначаєш голову ради з керівників відділень
+• ти отримуєш протокол після
+• ти втручаєшся тільки якщо треба (через Виконавчу раду)
+
+<strong>Ознаки, що пора запускати справжню РР:</strong>
+• керівники починають домовлятись, але постійно сперечаються
+• багато "розривів" між відділами
+• ти стаєш "перекладачем" між ними
+• 70% питань у тебе — це узгодження між керівниками
+
+<strong>Якщо це так — пора.</strong>`
+                },
+                {
+                    title: "Рівень 3: Заступник = керівник відділення",
+                    content: `<strong>Це дуже часта реальність.</strong>
+
+<strong>Стан:</strong>
+• є заступник
+• але він одночасно керує відділенням (наприклад, відділення №5)
+• а під ним є керівники інших відділень
+
+Тут міняється послідовність нарад.
+
+<strong>Правильна послідовність (важливо!):</strong>
+
+<span style="color:#16a34a">1.</span> Спочатку заступник проводить Раду з управління зі своїми підлеглими
+(схвалює їх плани)
+
+<span style="color:#16a34a">2.</span> Потім ці керівники йдуть на Рекомендаційну раду
+(узгоджують плани між рівними)
+
+<span style="color:#16a34a">3.</span> Потім вже зверху — затвердження/виконавча рада по потребі
+
+<strong>Чому так:</strong>
+бо інакше керівники прийдуть на РР з "сирими" планами, і рада перетвориться на хаос.`
+                },
+                {
+                    title: "Найважливіше: не відмовляйтесь від ідеального регламенту",
+                    content: `<strong>Навіть якщо у вас зараз "рівень 0–1", регламент має показувати:</strong>
+
+• яка ідеальна картина
+• які ради будуть потім
+• як зміниться послідовність
+
+<strong>Бо регламент — це карта маршруту.</strong>
+
+<strong>Але!</strong> Паралельно має бути план переходу:
+
+• "зараз робимо так"
+• "коли з'явиться X — міняємо на Y"
+• "коли керівників стане N — запускаємо РР без директора"`
+                },
+                {
+                    title: "Тригери переходу з Рівня 0 → 1",
+                    content: `<strong>Ось конкретні сигнали:</strong>
+
+<span style="color:#16a34a">✓</span> з'явився хоча б 1 заступник / операційний керівник
+
+<span style="color:#16a34a">✓</span> ти можеш делегувати частину затверджень
+
+<span style="color:#16a34a">✓</span> починаєш "не встигати" вести всі наради`
+                },
+                {
+                    title: "Тригери переходу з Рівня 1 → 2 (справжня РР)",
+                    content: `<span style="color:#16a34a">✓</span> керівники відділень вже є (3+)
+
+<span style="color:#16a34a">✓</span> між відділами постійні узгодження і конфлікти
+
+<span style="color:#16a34a">✓</span> ти є "пожежником" і "узгоджувачем"
+
+<span style="color:#16a34a">✓</span> рішення затягуються через те, що вони не домовляються між собою`
+                },
+                {
+                    title: "Тригери переходу з Рівня 2 → 3",
+                    content: `<span style="color:#16a34a">✓</span> заступник одночасно керує відділенням
+
+<span style="color:#16a34a">✓</span> з'явились підлеглі керівники під ним
+
+<span style="color:#16a34a">✓</span> без "попереднього схвалення" плани на РР стають сирими`
+                },
+                {
+                    title: "З чого почати прямо зараз (суперпрактично)",
+                    content: `<strong>Якщо у тебе зараз неідеальний стан (ти "все"):</strong>
+
+<strong>Крок 1</strong>
+Запускаєш щотижневу координацію директора
+але по протоколу Рекомендаційної ради.
+
+<strong>Крок 2</strong>
+Вимагаєш мінімальний пакет підготовки:
+• план минулого тижня (з фактами)
+• план наступного тижня
+• статистики + квоти
+• запити до інших відділів
+
+<strong>Крок 3</strong>
+Призначаєш "голову" навіть у себе на координації
+(це може бути твій керівник відділення або адмін-координатор) — щоб ти не перетворювався на "ведучого шоу".`
+                },
+                {
+                    title: "Наступні кроки росту",
+                    content: `<strong>Крок 4</strong>
+Як тільки з'являється перший заступник — запускаєш Виконавчу раду.
+
+<strong>Крок 5</strong>
+Як тільки керівників відділень стає 3+ — прибираєш себе з Рекомендаційної ради, залишаєш лише "затвердження зверху" і контроль протоколів.`
+                },
+                {
+                    title: "Підсумок уроку",
+                    content: `<strong>В 5 реченнях:</strong>
+
+<span style="color:#16a34a">1.</span> Ідеальна система рад не з'являється одразу — вона росте разом з компанією.
+
+<span style="color:#16a34a">2.</span> На старті ти можеш робити "координацію директора" за протоколом Рекомендаційної ради.
+
+<span style="color:#16a34a">3.</span> Рекомендаційна рада потрібна, якщо ти хочеш виростити керівників і вийти з операційки.
+
+<span style="color:#16a34a">4.</span> Як тільки з'являється перший заступник — час формувати Виконавчу раду.
+
+<span style="color:#16a34a">5.</span> Коли керівників відділень стає достатньо — Рекомендаційна рада має працювати без директора, інакше вона перетвориться на Раду з управління.`
+                }
+            ],
+            questions: [
+                {
+                    id: 1,
+                    question: "На якому рівні зараз ваша компанія (0, 1, 2 чи 3)? Опишіть поточну ситуацію.",
+                    placeholder: "Рівень 0 (ви все), Рівень 1 (є заступник), Рівень 2 (РР без директора), Рівень 3 (заступник = керівник відділення)..."
+                },
+                {
+                    id: 2,
+                    question: "Які тригери переходу на наступний рівень ви вже бачите у своїй компанії?",
+                    placeholder: "Перерахуйте ознаки, що пора переходити на наступний рівень..."
+                },
+                {
+                    id: 3,
+                    question: "Який ваш план переходу? Що зробите першим кроком цього тижня?",
+                    placeholder: "Опишіть конкретні дії: запуск координації, призначення голови, формування Виконавчої ради..."
+                }
+            ],
+            result: "Розуміння еволюції рад + план переходу на наступний рівень",
+            time: 25
+        },
+        {
+            id: 17,
+            title: "ПРОПОЗИЦІЇ З ОРГПОЛІТИКИ",
+            subtitle: "Як перестати «перетирать» одні й ті самі теми на координаціях",
+            type: "article",
+            articleSections: [
+                {
+                    title: "Проста ідея",
+                    content: `<strong>Якщо одна й та сама тема з'являється на координації знову і знову — значить, у компанії немає правила.</strong>
+
+А якщо немає правила — люди кожен раз "домовляються заново". Це дорого і тупо.
+
+<strong>Рішення:</strong> зробити оргполітику (правило в письмовому вигляді) і припинити координації на цю тему.`
+                },
+                {
+                    title: "Як зрозуміти, що «пора робити політику»",
+                    content: `<strong>Ось "сигнали" (пояснення як дитині):</strong>
+
+<span style="color:#f97316"><strong>Сигнал №1. Те саме питання звучить 2–3 рази за місяць</strong></span>
+
+Наприклад:
+• "Які терміни виробництва для такого типу замовлення?"
+• "Що робимо зі скаргою клієнта?"
+• "Як узгоджувати графіки експертів/кураторів/клієнтів?"
+• "Хто винен, що знову не підготували документ/ескіз?"
+
+Якщо це повторюється — значить немає однієї відповіді для всіх.
+
+<span style="color:#f97316"><strong>Сигнал №2. Після координації все одно плутаються</strong></span>
+
+Ви домовились, але через тиждень знову:
+• терміни "раптом інші"
+• правила "кожен пам'ятає по-своєму"
+• нові співробітники "не в курсі"
+
+Це означає: усні домовленості не працюють.
+
+<span style="color:#f97316"><strong>Сигнал №3. Координація затягується</strong></span>
+
+Тема розтягується на 20–60 хв, бо:
+• "давайте подумаємо"
+• "а якщо так?"
+• "а от минулого разу було інакше"
+• "а хтось колись сказав…"
+
+Це означає: нема підготовленого рішення на папері.`
+                },
+                {
+                    title: "Золоте правило координації",
+                    content: `<strong>Щоб не перетворювати нараду в базар:</strong>
+
+<span style="color:#16a34a"><strong>Якщо хтось хоче змінити правило — він має принести чернетку політики.</strong></span>
+
+<span style="color:#dc2626"><strong>Немає чернетки → немає обговорення.</strong></span>
+
+<strong>Як це звучить просто (фраза голови ради):</strong>
+
+<em>"Добре, ідея важлива. Де чернетка політики? Немає? Тоді: записуємо в протокол — підготувати політику до наступної ради. Йдемо далі."</em>
+
+<strong>Це зекономить вам десятки годин.</strong>`
+                },
+                {
+                    title: "Хто що робить (ролі)",
+                    content: `<strong>4.1. Ініціатор політики (хто підняв тему)</strong>
+
+Це людина, яка каже:
+• "у нас тут постійно плутанина"
+• "ми знову сваримося через те саме"
+• "це повторюється"
+
+<strong>Його обов'язок:</strong> не "говорити", а підготувати чернетку.
+
+<strong>4.2. Власник політики (хто відповідає за результат)</strong>
+
+Це зазвичай:
+• керівник відділення / керівник напряму
+• або той, чия статистика страждає від цього бардаку
+
+<strong>Його обов'язок:</strong> щоб політика:
+• була написана
+• була погоджена
+• була донесена до людей
+• реально запрацювала`
+                },
+                {
+                    title: "Ролі: голова та контроль",
+                    content: `<strong>4.3. Голова координації / ради</strong>
+
+<strong>Його обов'язок:</strong>
+не дати з'їхати в "обговорення без паперу".
+
+<strong>4.4. Контрольна секція / відповідальний за контроль</strong>
+
+<strong>Його обов'язок:</strong> перевіряти:
+• політика видана?
+• люди її знають?
+• її виконують?
+• якщо ні — застосовується градієнт впливу`
+                },
+                {
+                    title: "КРОК 1: Зафіксувати тему як «кандидат в політику»",
+                    content: `<strong>У протоколі координації робиться запис:</strong>
+
+• Тема:
+• Чому це повторюється:
+• Власник політики:
+• Дедлайн чернетки:
+• Де буде зберігатися:
+
+<strong>Приклад запису:</strong>
+
+<em>"Політика: Терміни виготовлення замовлень. Власник: керівник виробництва. Чернетка до середи 18:00. Погодження на наступній координації."</em>`
+                },
+                {
+                    title: "КРОК 2: Зібрати 3–5 фактів (не «думки»)",
+                    content: `<strong>Щоб політика була реальною, а не "красивою".</strong>
+
+<strong>Мінімум відповісти на 5 питань:</strong>
+
+<span style="color:#16a34a">1.</span> Що саме відбувається не так?
+
+<span style="color:#16a34a">2.</span> Як це шкодить (гроші/час/скарги/зриви)?
+
+<span style="color:#16a34a">3.</span> Де саме виникає плутанина?
+
+<span style="color:#16a34a">4.</span> Яке правило має прибрати плутанину?
+
+<span style="color:#16a34a">5.</span> Хто і що має робити по-новому?`
+                },
+                {
+                    title: "КРОК 3: Зробити чернетку через AI-асистента",
+                    content: `<strong>Ви не пишете "з нуля". Ви використовуєте AI-асистента оргполітик.</strong>
+
+<strong>Як правильно дати йому вхідні дані (простий шаблон):</strong>
+
+1. Назва політики (дуже проста)
+2. Ситуація (що повторюється)
+3. 2–3 приклади з життя
+4. Яке правило вводимо (в 1 реченні)
+5. Покроково "як правильно"
+6. Хто відповідальний
+7. Як будемо контролювати
+
+<strong>Кнопка для переходу до AI-асистента — нижче в цьому модулі.</strong>`
+                },
+                {
+                    title: "КРОК 4: Принести чернетку на координацію",
+                    content: `<strong>На координації НЕ "говорять ідею", а показують документ.</strong>
+
+<strong>Рішення координації може бути тільки 1 з 3:</strong>
+
+<span style="color:#16a34a">✓</span> <strong>Схвалено</strong> (вводимо в дію)
+
+<span style="color:#f97316">⚠️</span> <strong>Повернути на доопрацювання</strong> (з чіткими правками і датою)
+
+<span style="color:#dc2626">✗</span> <strong>Відхилено</strong> (не потрібно / зарано / нема сенсу)`
+                },
+                {
+                    title: "КРОК 5: Видати політику офіційно",
+                    content: `<strong>Тут правило просте:</strong>
+
+Політики високого рівня підписує власник — навіть якщо написав директор/менеджер/консультант.
+
+<strong>Чому:</strong> бо люди не "оцінюють автора", вони виконують "джерело влади".`
+                },
+                {
+                    title: "КРОК 6: Донести політику до тих, кому вона потрібна",
+                    content: `<strong>Не всім підряд.</strong>
+
+<strong>Мінімальний порядок донесення:</strong>
+
+<span style="color:#16a34a">1.</span> кому точно стосується (код розподілу / ролі)
+
+<span style="color:#16a34a">2.</span> коротко пояснити "навіщо" (яку проблему прибираємо)
+
+<span style="color:#16a34a">3.</span> показати 1 приклад "як було" і "як тепер"
+
+<span style="color:#16a34a">4.</span> дати де знайти документ (папка/база/пошук)`
+                },
+                {
+                    title: "КРОК 7: Перевірити, що політика реально запрацювала",
+                    content: `<strong>Важливий момент:</strong>
+
+Політика "існує" не тоді, коли файл є.
+<strong>А тоді, коли люди роблять правильно.</strong>`
+                },
+                {
+                    title: "Приклад 1: Терміни виробництва",
+                    content: `<strong>До:</strong> кожне замовлення — окреме "узгодження", потім терміни знов інші.
+
+<strong>Після:</strong> є таблиця/правило:
+• тип замовлення → стандартний термін
+• параметри → як додається час
+• хто має право змінювати термін
+• як фіксується зміна
+
+<strong>Результат:</strong> координації про терміни зникають.`
+                },
+                {
+                    title: "Приклад 2: Компенсації/скарги клієнтів",
+                    content: `<strong>До:</strong> кожна скарга — дискусія "що робити".
+
+<strong>Після:</strong> політика:
+• які типи скарг
+• що компенсуємо
+• хто затверджує
+• ліміт компенсації без погодження
+
+<strong>Результат:</strong> скарги вирішуються швидко, координації коротші.`
+                },
+                {
+                    title: "Приклад 3: Узгодження графіків",
+                    content: `<strong>До:</strong> нескінченні переписки, "переноси", невдоволення.
+
+<strong>Після:</strong> правило:
+• як ставиться слот
+• за скільки годин можна переносити
+• хто підтверджує
+• що робимо при форс-мажорі
+
+<strong>Результат:</strong> графіки стабільні, менше конфліктів.`
+                },
+                {
+                    title: "Мінімальна структура оргполітики",
+                    content: `<strong>Щоб не "академічно", а робоче.</strong>
+
+<strong>Шапка:</strong>
+• Тип документа (політика/регламент/інструкція)
+• Назва
+• Хто видав
+• Дата / версія
+• Для кого (код розподілу)
+
+<strong>Тіло (5 блоків):</strong>
+
+<span style="color:#16a34a">1.</span> <strong>Ситуація</strong> (яка проблема повторюється)
+
+<span style="color:#16a34a">2.</span> <strong>Ціль</strong> (що хочемо виправити)
+
+<span style="color:#16a34a">3.</span> <strong>Правило</strong> (1 речення) (як тепер правильно)
+
+<span style="color:#16a34a">4.</span> <strong>Як діяти</strong> (кроки) (1–7 кроків максимум)
+
+<span style="color:#16a34a">5.</span> <strong>Контроль і відповідальність</strong> (хто слідкує, що буде якщо ні)`
+                },
+                {
+                    title: "Чек-лист: чи можна виносити політику на затвердження",
+                    content: `<strong>(прям як контроль якості)</strong>
+
+☐ Назва проста і зрозуміла
+☐ Описана ситуація (реальна, з життя)
+☐ Є мета (що саме прибираємо)
+☐ Є коротке правило (1 речення)
+☐ Є покроково "як робити"
+☐ Є межі повноважень (хто може/не може)
+☐ Є контроль (хто перевіряє)
+☐ Є місце зберігання (де знайти)
+☐ Є зрозуміло кому стосується (ролі/посади)
+☐ Є підпис джерела влади (хто видає)`
+                },
+                {
+                    title: "Градієнт впливу (що робити, якщо не виконують)",
+                    content: `<strong>Політика без наслідків — це "папірець".</strong>
+
+<strong>Ось нормальна ескалація (від м'якого до жорсткого):</strong>
+
+<span style="color:#16a34a">1.</span> <strong>Нагадати + показати політику</strong>
+"Ось правило. Ось де написано. Зроби так."
+
+<span style="color:#16a34a">2.</span> <strong>Попросити пояснити правило своїми словами</strong>
+(щоб зрозуміти: людина не знає чи саботує)
+
+<span style="color:#16a34a">3.</span> <strong>Вимога виправити + дедлайн</strong>
+"До 17:00 виправити і відзвітувати."
+
+<span style="color:#f97316">4.</span> <strong>Фіксація порушення</strong>
+"Це порушення політики. Записано."
+
+<span style="color:#f97316">5.</span> <strong>Розбір з керівником / навчання</strong>
+якщо причина — некомпетентність
+
+<span style="color:#dc2626">6.</span> <strong>Обмеження повноважень / санкція</strong>
+якщо причина — ігнор / саботаж
+
+<strong>Важливо:</strong> "кара" не перша. Перша — зробити правило видимим і зрозумілим.`
+                },
+                {
+                    title: "Як це вставляється в координацію",
+                    content: `<strong>На кожній координації має бути пункт:</strong>
+
+<em>"Пропозиції з оргполітики" (5–10 хв максимум)</em>
+
+<strong>Порядок дуже простий:</strong>
+
+<span style="color:#16a34a">1.</span> Є чернетка? → 2 хв презентація
+
+<span style="color:#16a34a">2.</span> 3 хв обговорення правок
+
+<span style="color:#16a34a">3.</span> Рішення: схвалити / доробити / відхилити
+
+<span style="color:#16a34a">4.</span> Записати в протокол
+
+<strong>Якщо чернетки нема — пункт закривається за 10 секунд.</strong>`
+                }
+            ],
+            hasAIAssistant: true,
+            aiAssistant: {
+                title: "AI-асистент для створення політики",
+                description: "Допоможе створити чернетку оргполітики на основі ваших вхідних даних",
+                url: "https://chatgpt.com/g/g-6948fe9852508191a8d0f9f912baa547-ai-asistent-dlia-stvorennia-politiki-kompanii",
+                buttonText: "Створити політику з AI"
+            },
+            questions: [
+                {
+                    id: 1,
+                    question: "Які теми повторюються на ваших координаціях 2-3 рази на місяць? Перерахуйте кандидатів у політики.",
+                    placeholder: "Наприклад: терміни виробництва, компенсації клієнтам, узгодження графіків..."
+                },
+                {
+                    id: 2,
+                    question: "Виберіть одну тему і опишіть: що відбувається не так, як шкодить, яке правило має прибрати плутанину?",
+                    placeholder: "Опишіть ситуацію, проблему та пропоноване правило..."
+                },
+                {
+                    id: 3,
+                    question: "Хто буде власником цієї політики? До якої дати має бути готова чернетка?",
+                    placeholder: "Вкажіть ПІБ/посаду власника та дедлайн..."
+                }
+            ],
+            result: "Розуміння процесу створення оргполітик + перший кандидат",
+            time: 30
+        },
+        {
+            id: 18,
+            title: "ШАБЛОН ПРОТОКОЛУ",
+            subtitle: "Готовий шаблон протоколу Рекомендаційної ради",
+            type: "article",
+            articleSections: [
+                {
+                    title: "Навіщо потрібен протокол",
+                    content: `<strong>Протокол — це не "бюрократія".</strong>
+
+Протокол — це:
+• пам'ять ради (хто що пообіцяв)
+• список контролю (що перевірити наступного тижня)
+• доказ рішень (щоб не було "а ми так не домовлялись")
+
+<strong>Без протоколу:</strong>
+• рішення забуваються
+• обіцянки не виконуються
+• одні й ті самі питання обговорюються знову і знову
+
+<strong>Правило:</strong> Голова ради веде протокол сам, бо це його інструмент контролю.`
+                },
+                {
+                    title: "Структура протоколу (8 розділів)",
+                    content: `<strong>Протокол Рекомендаційної ради складається з 8 розділів:</strong>
+
+<span style="color:#16a34a">1.</span> <strong>Шапка</strong> — дата, голова, учасники
+
+<span style="color:#16a34a">2.</span> <strong>Огляд ІЦО</strong> — що показують статистики компанії
+
+<span style="color:#16a34a">3.</span> <strong>Доповіді за статистиками</strong> — кожен керівник звітує
+
+<span style="color:#16a34a">4.</span> <strong>Завдання на тиждень</strong> — хто що робить
+
+<span style="color:#16a34a">5.</span> <strong>Проблеми</strong> — що заважає
+
+<span style="color:#16a34a">6.</span> <strong>Пропозиції з політики</strong> — нові правила
+
+<span style="color:#16a34a">7.</span> <strong>Ключові рішення</strong> — що вирішили
+
+<span style="color:#16a34a">8.</span> <strong>Підписи</strong> — затвердження
+
+Далі розберемо кожен розділ.`
+                },
+                {
+                    title: "Розділ 1: Шапка",
+                    content: `<strong>Що заповнювати:</strong>
+
+• <strong>Дата</strong> — коли проводиться рада
+• <strong>Голова</strong> — хто веде (ПІБ)
+• <strong>Учасники</strong> — список всіх керівників відділень
+
+<strong>Для кожного учасника вказати:</strong>
+• ПІБ
+• Посада / Відділення
+• Присутній: Так / Ні
+
+<strong>Навіщо:</strong> щоб знати хто був, хто пропустив, з ким потім окремо поговорити.`
+                },
+                {
+                    title: "Розділ 2: Огляд ІЦО",
+                    content: `<strong>Що заповнювати:</strong>
+
+• <strong>Загальний стан компанії</strong> — що показує ІЦО? Де росте, де падає?
+• <strong>Вузьке місце</strong> — що тягне компанію вниз?
+
+<strong>Як заповнювати:</strong>
+
+Голова дивиться на графіки статистик і каже:
+<em>"Дохід росте 3 тижні поспіль. Але просування впало — це вузьке місце. Якщо не виправимо, через 2-3 тижні вплине на продажі."</em>
+
+<strong>Час:</strong> 2-5 хвилин максимум.`
+                },
+                {
+                    title: "Розділ 3: Доповіді за статистиками",
+                    content: `<strong>Що заповнювати для кожного керівника:</strong>
+
+• <strong>Статистика</strong> — назва головної статистики відділення
+• <strong>Квота</strong> — скільки планували
+• <strong>Факт</strong> — скільки вийшло
+• <strong>Що вплинуло</strong> — чому так (що зробили / не зробили)
+
+<strong>Приклад:</strong>
+
+| Статистика | Квота | Факт | Що вплинуло |
+|------------|-------|------|-------------|
+| Кількість нових клієнтів | 10 | 7 | Не вистачило лідів з маркетингу |
+
+<strong>Час:</strong> 2-3 хвилини на кожного керівника.`
+                },
+                {
+                    title: "Розділ 4: Завдання на тиждень",
+                    content: `<strong>Що заповнювати:</strong>
+
+• <strong>Завдання</strong> — що конкретно робити
+• <strong>Відповідальний</strong> — хто робить (ПІБ)
+• <strong>Термін</strong> — до коли
+• <strong>Потрібно від інших</strong> — що потрібно від інших відділів
+
+<strong>Приклад:</strong>
+
+| Завдання | Відповідальний | Термін | Від інших |
+|----------|----------------|--------|-----------|
+| Запустити рекламну кампанію | Іванов | Пт 18:00 | Тексти від контенту до Ср |
+
+<strong>Важливо:</strong> Завдання без відповідального і терміну — НЕ завдання!`
+                },
+                {
+                    title: "Розділ 5: Проблеми",
+                    content: `<strong>Що заповнювати:</strong>
+
+Список проблем, які заважають виконати план:
+• Що стопорить роботу?
+• Які "пожежі" потрібно гасити?
+• Що потребує термінового рішення?
+
+<strong>Приклад:</strong>
+
+<em>"Не можемо відвантажити продукцію — ангар протікає. Потрібно терміново вирішити з власником приміщення."</em>
+
+<strong>Правило:</strong> Якщо проблема потребує довгого обговорення — виносимо в окрему координацію 2-3 людей.`
+                },
+                {
+                    title: "Розділ 6: Пропозиції з політики",
+                    content: `<strong>Що заповнювати:</strong>
+
+• <strong>Тема політики</strong> — про що правило
+• <strong>Власник</strong> — хто готує чернетку
+• <strong>Статус</strong> — Схвалено / На доробку / Відхилено
+• <strong>Дедлайн</strong> — до коли чернетка
+
+<strong>Правило:</strong>
+<span style="color:#dc2626">Нема чернетки — нема обговорення!</span>
+
+<strong>Приклад:</strong>
+
+| Тема | Власник | Статус | Дедлайн |
+|------|---------|--------|---------|
+| Терміни виробництва | Петров | На доробку | Ср 12:00 |`
+                },
+                {
+                    title: "Розділ 7: Ключові рішення",
+                    content: `<strong>Це найважливіший розділ!</strong>
+
+<strong>Що заповнювати для кожного рішення:</strong>
+
+• <strong>Рішення</strong> — що конкретно вирішили
+• <strong>Відповідальний</strong> — хто робить
+• <strong>Термін</strong> — до коли
+• <strong>Контроль</strong> — хто перевірить виконання
+
+<strong>Приклад:</strong>
+
+| Рішення | Відповідальний | Термін | Контроль |
+|---------|----------------|--------|----------|
+| Закрити вакансію маркетолога | HR (Сидоренко) | 01.11 | Голова ради |
+
+<strong>Без цього рішення — не рішення, а розмова!</strong>`
+                },
+                {
+                    title: "Розділ 8: Підписи",
+                    content: `<strong>Що заповнювати:</strong>
+
+• <strong>Голова ради</strong> — підпис
+• <strong>Направити на Виконавчу раду</strong> — Так / Ні
+
+<strong>Коли направляти на Виконавчу раду:</strong>
+
+• Рішення, які виходять за межі повноважень Рекомендаційної ради
+• Питання бюджету
+• Кадрові зміни
+• Нові політики високого рівня`
+                },
+                {
+                    title: "Як заповнювати протокол (покроково)",
+                    content: `<strong>ПЕРЕД РАДОЮ:</strong>
+
+<span style="color:#16a34a">1.</span> Заповніть шапку (дата, голова)
+<span style="color:#16a34a">2.</span> Заповніть список учасників
+
+<strong>ПІД ЧАС РАДИ:</strong>
+
+<span style="color:#16a34a">3.</span> Записуйте огляд ІЦО
+<span style="color:#16a34a">4.</span> Записуйте доповіді (статистика, квота, факт)
+<span style="color:#16a34a">5.</span> Фіксуйте завдання (хто, що, коли)
+<span style="color:#16a34a">6.</span> Записуйте проблеми
+<span style="color:#16a34a">7.</span> Фіксуйте рішення по політиках
+<span style="color:#16a34a">8.</span> Записуйте ключові рішення
+
+<strong>ПІСЛЯ РАДИ:</strong>
+
+<span style="color:#16a34a">9.</span> Підпишіть протокол
+<span style="color:#16a34a">10.</span> Направте на Виконавчу раду (якщо потрібно)
+<span style="color:#16a34a">11.</span> Збережіть в архів`
+                },
+                {
+                    title: "Правила хорошого протоколу",
+                    content: `<strong>Протокол має бути:</strong>
+
+<span style="color:#16a34a">✓</span> <strong>Коротким</strong> — тільки суть, без "води"
+
+<span style="color:#16a34a">✓</span> <strong>Конкретним</strong> — хто, що, коли
+
+<span style="color:#16a34a">✓</span> <strong>Читабельним</strong> — щоб через тиждень зрозуміти
+
+<span style="color:#16a34a">✓</span> <strong>Повним</strong> — всі рішення зафіксовані
+
+<strong>Протокол НЕ має бути:</strong>
+
+<span style="color:#dc2626">✗</span> Стенограмою (дослівний запис всього)
+
+<span style="color:#dc2626">✗</span> Романом (довгі описи)
+
+<span style="color:#dc2626">✗</span> Порожнім (тільки заголовки без змісту)`
+                },
+                {
+                    title: "Шаблон для завантаження",
+                    content: `<strong>Ми підготували готовий шаблон протоколу в Excel.</strong>
+
+<strong>Що в шаблоні:</strong>
+
+• Всі 8 розділів протоколу
+• Жовті клітинки — те, що потрібно заповнювати
+• Сірі підказки — пояснення що писати
+• Окрема вкладка "Інструкція" — покрокове керівництво
+
+<strong>Як використовувати:</strong>
+
+1. Завантажте шаблон (кнопка нижче)
+2. Збережіть собі копію
+3. Заповнюйте жовті клітинки під час ради
+4. Зберігайте протоколи в окрему папку
+
+<strong>Кнопка завантаження — нижче.</strong>`
+                },
+                {
+                    title: "Підсумок",
+                    content: `<strong>Протокол Рекомендаційної ради — це:</strong>
+
+<span style="color:#16a34a">✓</span> Пам'ять ради (хто що пообіцяв)
+
+<span style="color:#16a34a">✓</span> Список контролю (що перевірити)
+
+<span style="color:#16a34a">✓</span> Доказ рішень (щоб не забути)
+
+<strong>8 розділів протоколу:</strong>
+
+1. Шапка + учасники
+2. Огляд ІЦО
+3. Доповіді за статистиками
+4. Завдання на тиждень
+5. Проблеми
+6. Пропозиції з політики
+7. Ключові рішення
+8. Підписи
+
+<strong>Головне правило:</strong> Рішення без відповідального і терміну — НЕ рішення!`
+                }
+            ],
+            hasDownload: true,
+            downloadLinks: [
+                {
+                    name: "Шаблон протоколу (.xlsx)",
+                    description: "Excel-файл з усіма розділами та інструкцією",
+                    url: "PROTOCOL_TEMPLATE_URL"
+                }
+            ],
+            questions: [
+                {
+                    id: 1,
+                    question: "Хто буде вести протокол на ваших Рекомендаційних радах? Як ви будете зберігати протоколи?",
+                    placeholder: "Вкажіть відповідального та місце зберігання (папка, Google Drive, тощо)..."
+                },
+                {
+                    id: 2,
+                    question: "Які розділи протоколу найважливіші для вашої компанії? Чому?",
+                    placeholder: "Наприклад: завдання на тиждень, бо у нас постійно забувають домовленості..."
+                },
+                {
+                    id: 3,
+                    question: "Як ви будете контролювати виконання рішень з протоколу?",
+                    placeholder: "Опишіть механізм контролю..."
+                }
+            ],
+            result: "Завантажений шаблон протоколу + розуміння як заповнювати",
+            time: 25
+        },
+        {
+            id: 19,
+            title: "ВПРОВАДЖЕННЯ КООРДИНАЦІЙ",
+            subtitle: "4 кроки, щоб координації реально запрацювали",
+            type: "practice",
+            practiceSteps: [
+                {
+                    title: "Головна ідея (1 речення)",
+                    content: `<strong>Координація запрацює тільки тоді, коли ви зробите 4 кроки:</strong>
+
+<span style="color:#16a34a">1.</span> <strong>Папери</strong> (правила)
+
+<span style="color:#16a34a">2.</span> <strong>Тренування</strong> (рольова гра)
+
+<span style="color:#16a34a">3.</span> <strong>Наставництво</strong> (ви поруч на реальних нарадах)
+
+<span style="color:#16a34a">4.</span> <strong>Доробка правил</strong> (бо виявляться "дірки")
+
+<strong>І все. Ніякої магії.</strong>`
+                },
+                {
+                    title: "Чому починаємо з «папірців»",
+                    content: `Уявіть, що ви хочете, щоб люди грали в гру, але правил немає.
+
+Тоді кожен грає "як хоче" → сварки → хаос → "наради — фігня".
+
+<strong>Тому спочатку правила, а вже потім "гра".</strong>
+
+<strong>Що саме треба підготувати:</strong>
+
+<span style="color:#16a34a">✓</span> Регламент координацій (як проводимо, хто приходить, скільки часу, який продукт)
+
+<span style="color:#16a34a">✓</span> Протокол координації (бланк, по якому йде голова)
+
+<span style="color:#16a34a">✓</span> Наказ про запровадження координацій (офіційно "вводимо з дати Х")
+
+<span style="color:#16a34a">✓</span> Інструкції для учасників (що вони мають принести на нараду)
+
+<strong>Важливе правило:</strong>
+Документи мають звучати "вашими словами": ваші назви посад, ваші терміни, ваші кабінети/Zoom, ваші назви відділів.
+
+Бо якщо документ "чужий" — люди відчувають, що це не про них і саботують.`
+                },
+                {
+                    title: "Чому без тренування нічого не буде",
+                    content: `Людина може вислухати список "що треба принести" і вже на пункті №3 забути, що було в пункті №1.
+
+<strong>Координація = багато елементів:</strong>
+
+• плани
+• статистики
+• протокол
+• таймінг
+• порядок виступів
+• рішення і фіксації
+
+<strong>Тому пояснення НЕ ДОСТАТНЬО.</strong>
+
+Потрібна рольова гра: "робимо як на реальній нараді".`
+                },
+                {
+                    title: "КРОК 1: Документи",
+                    content: `<strong>Ви робите "пульт управління"</strong>
+
+<strong>Мета:</strong> щоб у всіх було одне й те саме розуміння "як ми проводимо координацію".
+
+<strong>Що зробити:</strong>
+
+<span style="color:#16a34a">☐</span> Доопрацювати регламент координацій — <strong>2 години</strong>
+
+<span style="color:#16a34a">☐</span> Підготувати накази про запровадження координацій — <strong>30 хв</strong>
+
+<span style="color:#16a34a">☐</span> Надіслати розпорядження підготуватися до робочої зустрічі — <strong>20 хв</strong>
+
+<span style="color:#16a34a">☐</span> Усні індивідуальні запрошення керівникам + відповісти на запитання — <strong>40 хв</strong>
+
+<strong>Продукт кроку:</strong> готовий пакет документів, адаптований під вашу компанію.`
+                },
+                {
+                    title: "КРОК 2: Робоча зустріч + тренування",
+                    content: `<strong>Ви вчите "як руками робити"</strong>
+
+Це не "лекція". Це репетиція.
+
+<strong>Як це виглядає:</strong>
+
+1. Ви відкриваєте регламент і протокол
+
+2. І прямо по пунктах граєте:
+   • "ти — голова"
+   • "ти — керівник відділення 1"
+   • "ти — керівник відділення 2"
+
+3. Кожен прямо говорить свою доповідь по шаблону
+
+4. Ви коригуєте на місці
+
+<strong>Що зробити:</strong>
+
+<span style="color:#16a34a">☐</span> Підготовка до робочої зустрічі — <strong>1,5 години</strong>
+
+<span style="color:#16a34a">☐</span> Потренувати вступну частину зустрічі — <strong>2 години</strong>
+
+<span style="color:#16a34a">☐</span> Провести робочу зустріч-тренування — <strong>4–6 годин</strong>
+
+<strong>Продукт кроку:</strong> керівники реально вміють проводити координацію "за процедурою".`
+                },
+                {
+                    title: "КРОК 3: Наставництво на живих координаціях",
+                    content: `<strong>Ви сидите поруч</strong>
+
+Після тренування вони все одно:
+• зіб'ються
+• забудуть частину процедури
+• почнуть "балакати не по темі"
+• забудуть про таймінг
+
+<strong>Ваше завдання тут — бути тренером, а не "карателем".</strong>
+
+<strong>Різниця:</strong>
+
+• <strong>Тренування:</strong> ви граєте "ніби"
+• <strong>Наставництво:</strong> вони проводять "по-справжньому", а ви допомагаєте не зійти з рейок
+
+<strong>Що зробити:</strong>
+
+<span style="color:#16a34a">☐</span> Спостереження на координаціях (де ви не учасник) — <strong>2–3 слоти по 60–90 хв</strong>
+
+<span style="color:#16a34a">☐</span> Програма корекції + контроль покращення
+
+<strong>Продукт кроку:</strong> перші 2–4 реальні координації проходять правильно.`
+                },
+                {
+                    title: "КРОК 4: Корекція регламентів",
+                    content: `<strong>Ви лагодите "дірки"</strong>
+
+Після реальності завжди вилізе:
+• "в нас частина людей онлайн"
+• "в нас не вистачає одного документа"
+• "в нас інший порядок"
+• "в нас треба додати пункт"
+• "в нас треба спростити"
+
+<strong>Це нормально.</strong>
+
+Регламент майже ніколи не буває ідеальним з першого разу.
+
+<strong>Продукт кроку:</strong> оновлена версія правил, яка реально працює.`
+                },
+                {
+                    title: "Дуже важливе: без статистик координації не існує",
+                    content: `<strong>Координація без статистик = балачки.</strong>
+
+Бо на координації головне питання одне:
+
+<em>"Як підняти статистики?"</em>
+
+<strong>Тому перед запуском координацій у вас має бути:</strong>
+
+<span style="color:#16a34a">✓</span> Де ведемо статистики (ваша система / Excel)
+
+<span style="color:#16a34a">✓</span> Хто вносить дані
+
+<span style="color:#16a34a">✓</span> Хто перевіряє
+
+<span style="color:#16a34a">✓</span> Коли оновлюємо (до координації)
+
+<span style="color:#16a34a">✓</span> Яка "квота" на тиждень
+
+У відповідального має бути квота на тиждень затверджена, і контрольна секція має знати як перевірити.`
+                },
+                {
+                    title: "Нормальні часові стандарти",
+                    content: `<strong>На старті буде довше — це нормально.</strong>
+
+<strong>Стандарти:</strong>
+
+• <strong>Рекомендаційна рада:</strong> ціль = 1 година
+
+• <strong>Координація керівника з підлеглими:</strong> ціль = 30 хв
+
+<strong>Перші рази може бути:</strong>
+• 90 хв / 45–60 хв
+
+<strong>Ви не сваритеся — ви з кожним разом притискаєте до стандарту.</strong>`
+                },
+                {
+                    title: "Що поставити в календар",
+                    content: `<strong>Список робіт для Google Calendar:</strong>
+
+<span style="color:#16a34a">☐</span> Доопрацювати регламент координацій — <strong>2 години</strong>
+
+<span style="color:#16a34a">☐</span> Підготувати накази — <strong>30 хв</strong>
+
+<span style="color:#16a34a">☐</span> Надіслати розпорядження — <strong>20 хв</strong>
+
+<span style="color:#16a34a">☐</span> Усні запрошення керівникам — <strong>40 хв</strong>
+
+<span style="color:#16a34a">☐</span> Підготовка до робочої зустрічі — <strong>1,5 години</strong>
+
+<span style="color:#16a34a">☐</span> Потренувати вступну частину — <strong>2 години</strong>
+
+<span style="color:#16a34a">☐</span> Робоча зустріч-тренування — <strong>4–6 годин</strong>
+
+<span style="color:#16a34a">☐</span> Спостереження на координаціях — <strong>2–3 слоти по 60–90 хв</strong>
+
+<strong>Загалом: ~15-20 годин на впровадження</strong>`
+                },
+                {
+                    title: "Чек-лист «готові запускати координації чи ні»",
+                    content: `<strong>Перед тим як стартувати, перевір:</strong>
+
+<span style="color:#16a34a">☐</span> Є регламент + протокол
+
+<span style="color:#16a34a">☐</span> Є наказ (офіційно з дати Х)
+
+<span style="color:#16a34a">☐</span> Визначені типи координацій і хто їх голова
+
+<span style="color:#16a34a">☐</span> У кожного керівника є шаблон тижневого плану
+
+<span style="color:#16a34a">☐</span> Статистики ведуться і оновлюються до координації
+
+<span style="color:#16a34a">☐</span> Є відповідальний за контроль (і він знає як перевіряти)
+
+<span style="color:#16a34a">☐</span> Є стандарт часу (1 год / 30 хв)
+
+<span style="color:#16a34a">☐</span> Є план наставництва ("перші 2–4 рази я поруч")
+
+<strong>Якщо чогось нема — координація перетвориться в "посиділи поговорили".</strong>`
+                },
+                {
+                    title: "Матеріали для робочої зустрічі",
+                    content: `<strong>Для проведення робочої зустрічі з тренування координацій використовуйте:</strong>
+
+<span style="color:#16a34a">✓</span> <strong>Презентацію</strong> — для пояснення теорії команді
+
+<span style="color:#16a34a">✓</span> <strong>Тезиси для ведучого</strong> — що говорити по кожному слайду
+
+<strong>Кнопки для завантаження — нижче.</strong>
+
+Зробіть копію матеріалів та адаптуйте під специфіку вашої компанії.`
+                }
+            ],
+            hasMeetingMaterials: true,
+            meetingMaterials: {
+                theses: {
+                    title: "Тезиси для ведучого",
+                    description: "Що говорити під час робочої зустрічі",
+                    url: "https://docs.google.com/document/d/1EJtIOY9IMxgv3WpeNQ7XHetCIMkhGGqi/edit?usp=sharing&ouid=101363296124875097142&rtpof=true&sd=true"
+                },
+                presentation: {
+                    title: "Презентація для команди",
+                    description: "Слайди для робочої зустрічі-тренування",
+                    url: "https://docs.google.com/presentation/d/1nXHTA5A30DZ6mbOAiCEhHMNiwI296owf/edit?usp=sharing&ouid=101363296124875097142&rtpof=true&sd=true"
+                }
+            },
+            questions: [
+                {
+                    id: 1,
+                    question: "На які дати ви запланували 4 кроки впровадження? Вкажіть конкретні дати в календарі.",
+                    placeholder: "Крок 1 (документи): дата..., Крок 2 (тренування): дата..., Крок 3 (наставництво): дати..., Крок 4 (корекція): дата..."
+                },
+                {
+                    id: 2,
+                    question: "Хто буде відповідальним за контроль координацій? Хто буде наставником на перших нарадах?",
+                    placeholder: "Вкажіть ПІБ та посади..."
+                },
+                {
+                    id: 3,
+                    question: "Скільки пунктів з чек-листа готовності ви вже виконали? Що ще потрібно зробити?",
+                    placeholder: "Перерахуйте виконані пункти та план на невиконані..."
+                }
+            ],
+            result: "План впровадження координацій в календарі + готовність до запуску",
+            time: 45
         }
     ];
 
@@ -5892,6 +7741,12 @@
         document.getElementById('progress-percent').textContent = `${progressPercent}%`;
         document.getElementById('completed-count').textContent = `${completedModules}/${totalModules}`;
         document.getElementById('total-time').textContent = totalTime;
+        
+        // Update progress bar
+        const progressBarValue = document.getElementById('progress-bar-value');
+        const progressFill = document.getElementById('progress-fill');
+        if (progressBarValue) progressBarValue.textContent = `${progressPercent}%`;
+        if (progressFill) progressFill.style.width = `${progressPercent}%`;
     }
 
     function renderModules() {
